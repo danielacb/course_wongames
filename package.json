@@ -1,6 +1,6 @@
 {
   "name": "wongames",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "next": "10.2.0",
+    "next-pwa": "^5.2.21",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "styled-components": "^5.3.0"

@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
-import 'jest-styled-components'
 import theme from 'styles/theme'
 
 import Heading from '.'
@@ -36,5 +35,14 @@ describe('<Heading />', () => {
         modifier: '::after'
       }
     )
+  })
+
+  it('should render a heading with a small size', () => {
+    renderWithTheme(<Heading size="small">Won Games</Heading>)
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'font-size': theme.font.sizes.medium,
+      'border-bottom': `0.4rem solid ${theme.colors.primary}`
+    })
   })
 })

@@ -15,24 +15,41 @@ const wrapperModifiers = {
     &::after {
       position: absolute;
       left: 0;
-      bottom: -1.2rem;
       content: '';
-      width: 5rem;
-      border-bottom: 0.5rem solid ${theme.colors.primary};
     }
-  `
-}
+  `,
 
-export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, color = 'white', lineLeft, lineBottom }) => css`
-    color: ${theme.colors[color]};
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.medium};
+
+    &::after {
+      width: 3rem;
+      bottom: -1rem;
+      border-bottom: 0.4rem solid ${theme.colors.primary};
+    }
+  `,
+
+  medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
 
+    &::after {
+      width: 5rem;
+      bottom: -1.2rem;
+      border-bottom: 0.5rem solid ${theme.colors.primary};
+    }
+  `
+}
+
+export const Wrapper = styled.h2<HeadingProps>`
+  ${({ theme, color = 'white', lineLeft, lineBottom, size = 'medium' }) => css`
+    color: ${theme.colors[color]};
+
     ${lineLeft && wrapperModifiers.lineLeft(theme)}
     ${lineBottom && wrapperModifiers.lineBottom(theme)}
+    ${!!size && wrapperModifiers[size](theme)}
   `}
 `

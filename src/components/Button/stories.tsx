@@ -22,11 +22,21 @@ Default.args = {
   fullWidth: false
 }
 
-export const WithIcon: Story = (args) => <Button {...args} />
+export const withIcon: Story = (args) => <Button {...args} />
 
-WithIcon.args = {
+withIcon.args = {
   size: 'small',
   children: 'Buy now',
   icon: <AddShoppingCart />,
   fullWidth: false
+}
+
+export const asLink: Story = (args) => <Button {...args} />
+
+asLink.args = {
+  size: 'large',
+  children: 'Buy now',
+  fullWidth: false,
+  as: 'a',
+  href: '/link'
 }

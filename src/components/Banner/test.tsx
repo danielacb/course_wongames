@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import theme from 'styles/theme'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Banner from '.'
@@ -26,5 +27,25 @@ describe('<Banner />', () => {
     expect(screen.getByRole('img', { name: /defy death/i })).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
+  })
+
+  it('should render a Ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="Best Seller"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />
+    )
+
+    const ribbon = screen.getByText(/best seller/i)
+
+    expect(ribbon).toBeInTheDocument()
+    expect(ribbon).toHaveStyle({
+      backgroundColor: theme.colors.secondary,
+      height: '2.6rem',
+      fontSize: '1.2rem'
+    })
   })
 })

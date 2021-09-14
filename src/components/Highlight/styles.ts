@@ -3,10 +3,34 @@ import media from 'styled-media-query'
 
 import { HighlightProps } from '.'
 
-type WrapperProps = Pick<HighlightProps, 'backgroundImage'>
+const wrapperModifier = {
+  left: () => css`
+    grid-template-areas: 'content floatimage';
+    grid-template-columns: 2fr 1.3fr;
+
+    ${Content} {
+      text-align: left;
+    }
+
+    ${FloatImage} {
+      justify-self: end;
+    }
+  `,
+
+  right: () => css`
+    grid-template-areas: 'floatimage content';
+    grid-template-columns: 1.3fr 2fr;
+
+    ${Content} {
+      text-align: right;
+    }
+  `
+}
+
+type WrapperProps = Pick<HighlightProps, 'backgroundImage' | 'alignment'>
 
 export const Wrapper = styled.section<WrapperProps>`
-  ${({ backgroundImage }) => css`
+  ${({ backgroundImage, alignment = 'right' }) => css`
     position: relative;
     height: 23rem;
     background-image: url(${backgroundImage});
@@ -14,8 +38,8 @@ export const Wrapper = styled.section<WrapperProps>`
     background-position: center center;
     background-size: cover;
     display: grid;
-    grid-template-areas: 'floatimage content';
-    grid-template-columns: 1.3fr 2fr;
+
+    ${!!alignment && wrapperModifier[alignment]()}
 
     &::after {
       content: '';
@@ -34,7 +58,6 @@ export const Content = styled.div`
   ${({ theme }) => css`
     grid-area: content;
     z-index: ${theme.layers.base};
-    text-align: right;
     padding: ${theme.spacings.xsmall};
 
     ${media.greaterThan('medium')`

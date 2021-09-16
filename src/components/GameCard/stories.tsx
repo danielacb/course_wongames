@@ -8,7 +8,8 @@ export default {
     title: 'Population Zero',
     developer: 'Rockstart Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235'
+    price: 'R$ 235',
+    promotionalPrice: 'R$ 200,00'
   }
 } as Meta
 

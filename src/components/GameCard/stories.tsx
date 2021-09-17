@@ -9,7 +9,11 @@ export default {
     developer: 'Rockstart Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 'R$ 235',
-    promotionalPrice: 'R$ 200,00'
+    promotionalPrice: 'R$ 200,00',
+    favorite: false
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
   }
 } as Meta
 

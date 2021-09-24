@@ -35,6 +35,8 @@ export const Image = styled.div<ImageProps>`
 
     ${media.greaterThan('medium')`
       height: 58rem;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
     `}
   `}
 `

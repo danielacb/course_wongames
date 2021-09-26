@@ -8,7 +8,7 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 import * as S from './styles'
 
 export type GameCardSliderProps = {
-  items: GameCardProps[]
+  cards: GameCardProps[]
   color?: 'white' | 'black'
 }
 
@@ -50,10 +50,10 @@ const settings: SliderSettings = {
   prevArrow: <ArrowLeft aria-label="previous games" />
 }
 
-const GameCardSlider = ({ items, color }: GameCardSliderProps) => (
+const GameCardSlider = ({ cards, color }: GameCardSliderProps) => (
   <S.Wrapper color={color}>
     <Slider settings={settings}>
-      {items.map((item) => (
+      {cards.map((item) => (
         <GameCard key={item.title} {...item} />
       ))}
     </Slider>

@@ -3,7 +3,7 @@ import { ButtonProps } from '.'
 
 type WrapperProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth'>
+} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal'>
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -33,11 +33,26 @@ const wrapperModifiers = {
         margin-left: ${theme.spacings.xxsmall};
       }
     }
+  `,
+
+  minimal: (theme: DefaultTheme) => css`
+    background: none;
+    color: ${theme.colors.primary};
+
+    &:hover {
+      opacity: 0.8;
+    }
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size = 'medium', fullWidth = false, hasIcon }) => css`
+  ${({
+    theme,
+    size = 'medium',
+    fullWidth = false,
+    hasIcon,
+    minimal = false
+  }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.colors.white};
     border: 0;
@@ -50,11 +65,14 @@ export const Wrapper = styled.button<WrapperProps>`
     justify-content: center;
 
     &:hover {
-      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+      background: ${minimal
+        ? 'none'
+        : 'linear-gradient(180deg, #e35565 0%, #d958a6 50%)'};
     }
 
     ${!!size && wrapperModifiers[size](theme)};
-    ${fullWidth && wrapperModifiers.fullWidth}
-    ${hasIcon && wrapperModifiers.withIcon(theme)}
+    ${!!fullWidth && wrapperModifiers.fullWidth};
+    ${!!hasIcon && wrapperModifiers.withIcon(theme)};
+    ${!!minimal && wrapperModifiers.minimal(theme)};
   `}
 `

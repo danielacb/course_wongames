@@ -28,7 +28,8 @@ withIcon.args = {
   size: 'small',
   children: 'Buy now',
   icon: <AddShoppingCart />,
-  fullWidth: false
+  fullWidth: false,
+  minimal: false
 }
 
 export const asLink: Story = (args) => <Button {...args} />
@@ -37,6 +38,7 @@ asLink.args = {
   size: 'large',
   children: 'Buy now',
   fullWidth: false,
+  minimal: false,
   as: 'a',
   href: '/link'
 }

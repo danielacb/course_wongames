@@ -100,7 +100,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity ${theme.transition.default};
 
     > svg {
       position: absolute;
@@ -121,7 +121,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
 
     ${MenuLink}, ${RegisterBox} {
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
-      transition: transform 0.3s ease-in-out;
+      transition: transform ${theme.transition.default};
     }
 
     ${MenuNav} {

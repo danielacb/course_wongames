@@ -52,6 +52,16 @@ describe('<TextField />', () => {
     expect(input).toHaveFocus()
   })
 
+  it('should not be accessible when disabled ', () => {
+    renderWithTheme(<TextField label="TextField" id="TextField" disabled />)
+
+    const input = screen.getByLabelText('TextField')
+    expect(document.body).toHaveFocus()
+
+    userEvent.tab()
+    expect(input).not.toHaveFocus()
+  })
+
   it('should render an icon on the left by default', () => {
     renderWithTheme(<TextField icon={<Email data-testid="icon" />} />)
 
@@ -65,5 +75,25 @@ describe('<TextField />', () => {
     )
 
     expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
+  })
+
+  it('should not change its value when disabled', async () => {
+    const onInput = jest.fn()
+    renderWithTheme(
+      <TextField onInput={onInput} label="TextField" id="TextField" disabled />
+    )
+
+    const input = screen.getByRole('textbox')
+    const text = 'This is my new text'
+
+    expect(input).toBeDisabled()
+
+    userEvent.type(input, text)
+
+    await waitFor(() => {
+      expect(input).not.toHaveValue(text)
+    })
+
+    expect(onInput).not.toHaveBeenCalled()
   })
 })

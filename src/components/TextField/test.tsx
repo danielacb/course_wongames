@@ -96,4 +96,19 @@ describe('<TextField />', () => {
 
     expect(onInput).not.toHaveBeenCalled()
   })
+
+  it('should display an error when props is paassed', () => {
+    const { container } = renderWithTheme(
+      <TextField
+        icon={<Email data-testid="icon" />}
+        label="TextField"
+        id="TextField"
+        error="Required"
+      />
+    )
+
+    expect(screen.getByText('Required')).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

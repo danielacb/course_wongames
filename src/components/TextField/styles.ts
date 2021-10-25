@@ -1,5 +1,9 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
+import { TextFieldProps } from '.'
+type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
+type WrapperProps = Pick<TextFieldProps, 'disabled'> & { error?: boolean }
+
 const wrapperModifiers = {
   disabled: (theme: DefaultTheme) => css`
     ${Label},
@@ -12,17 +16,27 @@ const wrapperModifiers = {
         color: currentColor;
       }
     }
+  `,
+
+  error: (theme: DefaultTheme) => css`
+    ${InputWrapper} {
+      border-color: ${theme.colors.red};
+    }
+
+    ${Icon},
+    ${Label},
+    ${Input} {
+      color: ${theme.colors.red};
+    }
   `
 }
 
-export const Wrapper = styled.div<Pick<TextFieldProps, 'disabled'>>`
-  ${({ theme, disabled }) => css`
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, disabled, error }) => css`
     ${disabled && wrapperModifiers.disabled(theme)}
+    ${error && wrapperModifiers.error(theme)}
   `}
 `
-
-import { TextFieldProps } from '.'
-type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
 
 export const Label = styled.label`
   ${({ theme }) => css`
@@ -70,5 +84,13 @@ export const Icon = styled.span<IconPositionProps>`
     & > svg {
       width: 100%;
     }
+  `}
+`
+
+export const Error = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
+    font-size: ${theme.font.sizes.xsmall};
+    height: 1.125rem;
   `}
 `

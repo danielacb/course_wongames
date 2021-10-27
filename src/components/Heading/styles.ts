@@ -43,6 +43,10 @@ const wrapperModifiers = {
       bottom: -1.2rem;
       border-bottom: 0.5rem solid ${theme.colors[lineColor]};
     }
+  `,
+
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.huge};
   `
 }
 

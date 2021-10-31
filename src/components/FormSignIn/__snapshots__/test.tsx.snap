@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormSignIn /> should render the form 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,12 +56,6 @@ exports[`<FormSignIn /> should render the form 1`] = `
   height: 1.125rem;
 }
 
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c9 {
   background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
   color: #FAFAFA;
@@ -92,22 +92,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
 }
 
 .c0 .c8 {
-  margin: 3.2rem 0 1.6rem;
-}
-
-.c7 {
-  display: block;
-  font-size: 1.4rem;
-  color: #030517;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  text-align: right;
-  -webkit-transition: opacity 0.1s ease-in-out;
-  transition: opacity 0.1s ease-in-out;
-}
-
-.c7:hover {
-  opacity: 0.7;
+  margin: 2.4rem 0 1.6rem;
 }
 
 .c10 {
@@ -130,9 +115,25 @@ exports[`<FormSignIn /> should render the form 1`] = `
   filter: brightness(80%);
 }
 
+.c7 {
+  display: block;
+  font-size: 1.4rem;
+  color: #030517;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: right;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+  margin-bottom: 0.8rem;
+}
+
+.c7:hover {
+  opacity: 0.7;
+}
+
 <body>
   <div>
-    <div
+    <main
       class="c0"
     >
       <form>
@@ -242,24 +243,15 @@ exports[`<FormSignIn /> should render the form 1`] = `
           class="c10"
         >
           Don’t have an account?
+           
           <a
             href="/signup"
           >
-             Sign up
+            Sign up
           </a>
         </div>
       </form>
-    </div>
+    </main>
   </div>
 </body>
-`;
-
-exports[`<FormSignIn /> should render the heading 1`] = `
-<main
-  class=""
->
-  <h1>
-    FormSignIn
-  </h1>
-</main>
 `;

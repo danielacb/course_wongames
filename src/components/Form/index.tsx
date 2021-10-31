@@ -3,14 +3,14 @@ import styled, { css } from 'styled-components'
 import * as TextFieldStyles from 'components/TextField/styles'
 import * as ButtonStyles from 'components/Button/styles'
 
-export const Wrapper = styled.main`
+export const FormWrapper = styled.main`
   ${({ theme }) => css`
     ${TextFieldStyles.Wrapper} {
       margin: ${theme.spacings.xxsmall} 0;
     }
 
     ${ButtonStyles.Wrapper} {
-      margin: ${theme.spacings.medium} 0 ${theme.spacings.xsmall};
+      margin: ${theme.spacings.small} 0 ${theme.spacings.xsmall};
     }
   `}
 `

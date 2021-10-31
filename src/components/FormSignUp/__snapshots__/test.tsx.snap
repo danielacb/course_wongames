@@ -92,7 +92,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
 }
 
 .c0 .c7 {
-  margin: 3.2rem 0 1.6rem;
+  margin: 2.4rem 0 1.6rem;
 }
 
 .c9 {
@@ -308,10 +308,11 @@ exports[`<FormSignUp /> should render the form 1`] = `
       class="c9"
     >
       Already have an account?
+       
       <a
         href="/signin"
       >
-         Sign in
+        Sign in
       </a>
     </div>
   </form>

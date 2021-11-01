@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart'
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
+
 import Logo from 'components/Logo'
 import Button from 'components/Button'
 import MediaMatch from 'components/MediaMatch'
@@ -25,7 +27,11 @@ const Menu = ({ username }: MenuProps) => {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Logo hideOnMobile />
+        <Link href="/">
+          <a>
+            <Logo hideOnMobile />
+          </a>
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
@@ -44,7 +50,9 @@ const Menu = ({ username }: MenuProps) => {
         </S.IconWrapper>
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href="/signin" passHref>
+              <Button as="a">Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -65,11 +73,15 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="large">
-              Log in now
-            </Button>
+            <Link href="/signin" passHref>
+              <Button fullWidth size="large" as="a">
+                Log in now
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAccount href="#">Sign up</S.CreateAccount>
+            <Link href="/signup" passHref>
+              <S.CreateAccount href="#">Sign up</S.CreateAccount>
+            </Link>
           </S.RegisterBox>
         )}
       </S.MenuFull>

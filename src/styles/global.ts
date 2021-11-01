@@ -59,12 +59,18 @@ const GlobalStyles: GlobalStyleComponent<
     }
 
     body {
-      font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
       ${!removeBg &&
       css`
         background-color: ${theme.colors.mainBg};
       `}
+    }
+
+    body,
+    input,
+    button,
+    textarea {
+      font-family: ${theme.font.family};
     }
   `}
 

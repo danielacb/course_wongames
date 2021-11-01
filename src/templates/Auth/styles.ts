@@ -49,6 +49,11 @@ export const BannerContent = styled.div`
     grid-template-columns: 1fr;
     height: 100%;
     justify-content: space-between;
+
+    a {
+      width: fit-content;
+      height: fit-content;
+    }
   `}
 `
 

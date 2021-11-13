@@ -16,6 +16,23 @@ export default {
     },
     releaseDate: {
       control: { type: 'date' }
+    },
+    genres: {
+      control: {
+        type: 'multi-select',
+        options: [
+          'Action',
+          'Adventure',
+          'Indie',
+          'Narrative',
+          'Racing',
+          'Role-playing',
+          'Shooter',
+          'Simulation',
+          'Sports',
+          'Strategy'
+        ]
+      }
     }
   },
   parameters: {

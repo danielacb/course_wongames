@@ -5,7 +5,7 @@ import { HeadingProps } from '.'
 
 type LineColors = 'primary' | 'secondary'
 
-const wrapperModifiers = {
+export const wrapperModifiers = {
   lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
     padding-left: ${theme.spacings.xxsmall};
     border-left: 0.7rem solid ${theme.colors[lineColor]};

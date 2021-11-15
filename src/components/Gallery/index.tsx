@@ -1,5 +1,4 @@
 import { Settings as SliderSettings } from 'react-slick'
-import GameCard, { GameCardProps } from 'components/GameCard'
 import Slider from 'components/Slider'
 
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos'
@@ -7,9 +6,13 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 
 import * as S from './styles'
 
-export type GameCardSliderProps = {
-  cards: GameCardProps[]
-  color?: 'white' | 'black'
+export type GalleryImageProps = {
+  src: string
+  label: string
+}
+
+export type GalleryProps = {
+  images: GalleryImageProps[]
 }
 
 const settings: SliderSettings = {
@@ -22,43 +25,44 @@ const settings: SliderSettings = {
       breakpoint: 1375,
       settings: {
         arrows: false,
-        slidesToShow: 3.2
+        slidesToShow: 3.2,
+        draggable: true
       }
     },
     {
       breakpoint: 1024,
       settings: {
         arrows: false,
-        slidesToShow: 2.2
+        slidesToShow: 2.2,
+        draggable: true
       }
     },
     {
-      breakpoint: 570,
+      breakpoint: 768,
       settings: {
         arrows: false,
-        slidesToShow: 1.2
-      }
-    },
-    {
-      breakpoint: 375,
-      settings: {
-        arrows: false,
-        slidesToShow: 1.1
+        slidesToShow: 2.2,
+        draggable: true
       }
     }
   ],
-  nextArrow: <ArrowRight aria-label="next games" />,
-  prevArrow: <ArrowLeft aria-label="previous games" />
+  nextArrow: <ArrowRight aria-label="next image" />,
+  prevArrow: <ArrowLeft aria-label="previous image" />
 }
 
-const GameCardSlider = ({ cards, color }: GameCardSliderProps) => (
-  <S.Wrapper color={color}>
+const Gallery = ({ images }: GalleryProps) => (
+  <S.Wrapper>
     <Slider settings={settings}>
-      {cards.map((item) => (
-        <GameCard key={item.title} {...item} />
+      {images.map((image) => (
+        <img
+          key={`thumb-${image.src}`}
+          src={image.src}
+          alt={`Thumb - ${image.label}`}
+          role="button"
+        />
       ))}
     </Slider>
   </S.Wrapper>
 )
 
-export default GameCardSlider
+export default Gallery

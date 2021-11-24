@@ -7,7 +7,7 @@ export const Main = styled.main`
   margin-top: 20rem;
 
   ${media.greaterThan('medium')`
-    margin-top: 58rem;
+    margin-top: 42rem;
   `}
 `
 
@@ -53,6 +53,9 @@ const Section = styled(Container).attrs({ as: 'section' })`
 `
 
 export const SectionGameInfo = styled(Section)``
+export const SectionUpcomingGames = styled(Section)``
+export const SectionUpcomingHighlight = styled(Section)``
+export const SectionRecommendedGames = styled(Section)``
 
 export const SectionGallery = styled(Section)`
   display: none;

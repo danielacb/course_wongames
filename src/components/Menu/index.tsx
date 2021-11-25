@@ -28,15 +28,19 @@ const Menu = ({ username }: MenuProps) => {
 
       <S.LogoWrapper>
         <Link href="/">
-          <a>
-            <Logo hideOnMobile />
-          </a>
+          <Link href="/" passHref>
+            <a>
+              <Logo hideOnMobile />
+            </a>
+          </Link>
         </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
@@ -65,7 +69,9 @@ const Menu = ({ username }: MenuProps) => {
           <S.MenuLink href="#">Explore</S.MenuLink>
           {!!username && (
             <>
-              <S.MenuLink href="#">My account</S.MenuLink>
+              <Link href="/" passHref>
+                <S.MenuLink>My account</S.MenuLink>
+              </Link>
               <S.MenuLink href="#">Wishlist</S.MenuLink>
             </>
           )}

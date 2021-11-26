@@ -7,7 +7,7 @@ export const Main = styled.main`
   margin-top: 20rem;
 
   ${media.greaterThan('medium')`
-    margin-top: 42rem;
+    margin-top: 37rem;
   `}
 `
 

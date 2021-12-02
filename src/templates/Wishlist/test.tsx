@@ -21,7 +21,7 @@ jest.mock('components/Showcase', () => ({
 }))
 
 describe('<Wishlist />', () => {
-  it('should render correctly', () => {
+  it('should render the Wishlist', () => {
     renderWithTheme(<Wishlist {...props} />)
 
     expect(
@@ -30,5 +30,19 @@ describe('<Wishlist />', () => {
 
     expect(screen.getAllByAltText(/population zero/i)).toHaveLength(6)
     expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
+  })
+
+  it('should render an empty state when there is no game', () => {
+    renderWithTheme(
+      <Wishlist
+        recommendedGames={gamesMock}
+        recommendedHighlight={highlightMock}
+      />
+    )
+
+    expect(screen.queryByAltText(/population zero/i)).not.toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /your wishlist is empty/i })
+    ).toBeInTheDocument()
   })
 })

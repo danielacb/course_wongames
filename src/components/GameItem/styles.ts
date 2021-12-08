@@ -64,3 +64,10 @@ export const Price = styled.p`
     font-weight: ${theme.font.bold};
   `}
 `
+
+export const DownloadLink = styled.a`
+  ${({ theme }) => css`
+    color: ${theme.colors.primary};
+    margin-left: ${theme.spacings.xxsmall};
+  `}
+`

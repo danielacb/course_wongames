@@ -18,5 +18,11 @@ export const WithPayment: Story<GameItemProps> = (args) => (
 )
 
 WithPayment.args = {
-  downloadLink: 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2'
+  downloadLink: 'https://en.wikipedia.org/wiki/Red_Dead_Redemption_2',
+  paymentInfo: {
+    flag: 'mastercard',
+    img: '/img/cards/mastercard.png',
+    number: '**** **** **** 4326',
+    purchaseDate: 'Purchase made on 07/20/2020 at 20:32'
+  }
 }

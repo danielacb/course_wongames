@@ -42,6 +42,13 @@ const wrapperModifiers = {
     &:hover {
       opacity: 0.8;
     }
+  `,
+
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
   `
 }
 
@@ -51,7 +58,8 @@ export const Wrapper = styled.button<WrapperProps>`
     size = 'medium',
     fullWidth = false,
     hasIcon,
-    minimal = false
+    minimal = false,
+    disabled
   }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.colors.white};
@@ -74,5 +82,6 @@ export const Wrapper = styled.button<WrapperProps>`
     ${!!fullWidth && wrapperModifiers.fullWidth};
     ${!!hasIcon && wrapperModifiers.withIcon(theme)};
     ${!!minimal && wrapperModifiers.minimal(theme)};
+    ${disabled && wrapperModifiers.disabled()}
   `}
 `

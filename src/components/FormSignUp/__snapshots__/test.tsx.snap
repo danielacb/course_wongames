@@ -235,6 +235,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </span>
         <input
+          autocomplete="off"
           class="c5"
           id="password"
           name="password"

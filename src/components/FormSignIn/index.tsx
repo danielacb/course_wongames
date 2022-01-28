@@ -12,16 +12,15 @@ const FormSignIn = () => (
     <form>
       <TextField
         name="email"
-        id="email"
         placeholder="Email"
         type="email"
         icon={<Email />}
       />
       <TextField
         name="password"
-        id="password"
         placeholder="Password"
         type="password"
+        autoComplete="off"
         icon={<Lock />}
       />
       <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>

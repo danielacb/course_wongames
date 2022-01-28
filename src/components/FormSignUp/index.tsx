@@ -11,28 +11,25 @@ const FormSignUp = () => (
     <form>
       <TextField
         name="name"
-        id="name"
         placeholder="Name"
         type="name"
         icon={<AccountCircle />}
       />
       <TextField
         name="email"
-        id="email"
         placeholder="Email"
         type="email"
         icon={<Email />}
       />
       <TextField
         name="password"
-        id="password"
         placeholder="Password"
         type="password"
+        autoComplete="off"
         icon={<Lock />}
       />
       <TextField
         name="confirm-password"
-        id="confirm-password"
         placeholder="Confirm password"
         type="confirm-password"
         icon={<Lock />}

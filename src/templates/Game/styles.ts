@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 import { Container } from 'components/Container'
 
-export const Main = styled.main`
+export const Main = styled.div`
   margin-top: 20rem;
 
   ${media.greaterThan('medium')`

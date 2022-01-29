@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import * as HeadingStyles from 'components/Heading/styles'
 import * as LogoStyles from 'components/Logo/styles'
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;

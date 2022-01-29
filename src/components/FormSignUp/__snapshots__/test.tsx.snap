@@ -115,7 +115,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
   filter: brightness(80%);
 }
 
-<main
+<div
   class="c0"
 >
   <form>
@@ -317,5 +317,5 @@ exports[`<FormSignUp /> should render the form 1`] = `
       </a>
     </div>
   </form>
-</main>
+</div>
 `;

@@ -6,13 +6,13 @@ import { GameItemProps } from 'components/GameItem'
 import * as S from './styles'
 
 export type CartDropdownProps = {
-  items: GameItemProps[]
-  total: string
+  items?: GameItemProps[]
+  total?: string
 }
 
 const CartDropdown = ({ items, total }: CartDropdownProps) => (
   <S.Wrapper>
-    <Dropdown trigger={<CartIcon quantity={items.length} />}>
+    <Dropdown trigger={<CartIcon quantity={items?.length} />}>
       <CartList items={items} total={total} hasButton />
     </Dropdown>
   </S.Wrapper>

@@ -93,6 +93,9 @@ exports[`<GameCard /> should render the GameCard 1`] = `
 
 .c3 {
   max-width: calc(100% - 2.5rem);
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4 {
@@ -157,18 +160,19 @@ exports[`<GameCard /> should render the GameCard 1`] = `
 <article
   class="c0"
 >
-  <div
+  <a
     class="c1"
+    href="/game/population-zero"
   >
     <img
       alt="Population Zero"
       src="https://source.unsplash.com/user/willianjusten/300x140"
     />
-  </div>
+  </a>
   <div
     class="c2"
   >
-    <div
+    <a
       class="c3"
     >
       <h3
@@ -181,7 +185,7 @@ exports[`<GameCard /> should render the GameCard 1`] = `
       >
         Rockstar Games
       </h4>
-    </div>
+    </a>
     <div
       class="c6"
       role="button"

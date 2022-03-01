@@ -18,7 +18,7 @@ export default {
     onInput: { action: 'changed' },
     icon: { type: '' }
   }
-} as Meta
+} as unknown as Meta
 
 export const Default: Story = (args) => (
   <div style={{ maxWidth: 300, padding: 15 }}>

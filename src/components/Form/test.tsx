@@ -3,7 +3,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import { FormLink, FormWrapper } from '.'
 
 describe('<Form />', () => {
-  it('should render the heading', () => {
+  it('should render the Form', () => {
     const { container } = renderWithTheme(
       <FormWrapper>
         <FormLink>
@@ -13,21 +13,13 @@ describe('<Form />', () => {
     )
 
     expect(container.parentElement).toMatchInlineSnapshot(`
-      .c0 .sc-bdnxRM {
-        margin: 0.8rem 0;
-      }
-
-      .c0 .sc-gKAaRy {
-        margin: 2.4rem 0 1.6rem;
-      }
-
-      .c1 {
+      .c0 {
         font-size: 1.4rem;
         color: #030517;
         text-align: center;
       }
 
-      .c1 a {
+      .c0 a {
         color: #3CD3C1;
         -webkit-text-decoration: none;
         text-decoration: none;
@@ -36,7 +28,7 @@ describe('<Form />', () => {
         transition: filter 0.1s ease-in-out;
       }
 
-      .c1 a:hover {
+      .c0 a:hover {
         -webkit-filter: brightness(80%);
         filter: brightness(80%);
       }
@@ -44,10 +36,10 @@ describe('<Form />', () => {
       <body>
         <div>
           <div
-            class="c0"
+            class=""
           >
             <div
-              class="c1"
+              class="c0"
             >
               My nice 
               <a

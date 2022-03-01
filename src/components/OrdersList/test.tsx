@@ -4,7 +4,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import OrdersList from '.'
 import mock from './mock'
 
-jest.mock('components/Empty', () => ({
+jest.mock('components/EmptyState', () => ({
   __esModule: true,
   default: function Mock() {
     return <div data-testid="Mock Empty" />

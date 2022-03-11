@@ -41,7 +41,15 @@ export async function getStaticProps() {
         price: game.price
       })),
 
-      mostPopularHighlight: highlightMock,
+      mostPopularHighlight: {
+        title: sections?.popularGames?.highlight?.title,
+        subtitle: sections?.popularGames?.highlight?.subtitle,
+        backgroundImage: `http://localhost:1337${sections?.popularGames?.highlight?.background?.url}`,
+        floatImage: `http://localhost:1337${sections?.popularGames?.highlight?.floatImage?.url}`,
+        buttonLabel: sections?.popularGames?.highlight?.buttonLabel,
+        buttonLink: sections?.popularGames?.highlight?.buttonLink,
+        alignment: sections?.popularGames?.highlight?.alignment
+      },
 
       mostPopularGamesTitle: sections?.popularGames?.title,
       mostPopularGames: sections?.popularGames?.games.map((game) => ({
@@ -61,7 +69,15 @@ export async function getStaticProps() {
         price: game.price
       })),
 
-      upcomingHighlight: highlightMock,
+      upcomingHighlight: {
+        title: sections?.upcomingGames?.highlight?.title,
+        subtitle: sections?.upcomingGames?.highlight?.subtitle,
+        backgroundImage: `http://localhost:1337${sections?.upcomingGames?.highlight?.background?.url}`,
+        floatImage: `http://localhost:1337${sections?.upcomingGames?.highlight?.floatImage?.url}`,
+        buttonLabel: sections?.upcomingGames?.highlight?.buttonLabel,
+        buttonLink: sections?.upcomingGames?.highlight?.buttonLink,
+        alignment: sections?.upcomingGames?.highlight?.alignment
+      },
 
       freeGamesTitle: sections?.freeGames?.title,
       freeGames: freeGames.map((game) => ({
@@ -72,7 +88,15 @@ export async function getStaticProps() {
         price: game.price
       })),
 
-      freeHighlight: highlightMock
+      freeGamesHighlight: {
+        title: sections?.freeGames?.highlight?.title,
+        subtitle: sections?.freeGames?.highlight?.subtitle,
+        backgroundImage: `http://localhost:1337${sections?.freeGames?.highlight?.background?.url}`,
+        floatImage: `http://localhost:1337${sections?.freeGames?.highlight?.floatImage?.url}`,
+        buttonLabel: sections?.freeGames?.highlight?.buttonLabel,
+        buttonLink: sections?.freeGames?.highlight?.buttonLink,
+        alignment: sections?.freeGames?.highlight?.alignment
+      }
     }
   }
 }

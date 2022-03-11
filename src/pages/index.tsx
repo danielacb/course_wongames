@@ -32,6 +32,7 @@ export async function getStaticProps() {
         })
       })),
 
+      newGamesTitle: sections?.newGames?.title,
       newGames: newGames.map((game) => ({
         title: game.name,
         slug: game.slug,
@@ -42,6 +43,7 @@ export async function getStaticProps() {
 
       mostPopularHighlight: highlightMock,
 
+      mostPopularGamesTitle: sections?.popularGames?.title,
       mostPopularGames: sections?.popularGames?.games.map((game) => ({
         title: game.name,
         slug: game.slug,
@@ -50,6 +52,7 @@ export async function getStaticProps() {
         price: game.price
       })),
 
+      upcomingGamesTitle: sections?.upcomingGames?.title,
       upcomingGames: upcomingGames.map((game) => ({
         title: game.name,
         slug: game.slug,
@@ -60,6 +63,7 @@ export async function getStaticProps() {
 
       upcomingHighlight: highlightMock,
 
+      freeGamesTitle: sections?.freeGames?.title,
       freeGames: freeGames.map((game) => ({
         title: game.name,
         slug: game.slug,

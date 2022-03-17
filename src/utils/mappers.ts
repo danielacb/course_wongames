@@ -24,7 +24,9 @@ export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
       title: game.name,
       slug: game.slug,
       developer: game.developers[0].name,
-      img: `http://localhost:1337${game.cover?.url}`,
+      img: game.cover?.url
+        ? `http://localhost:1337${game.cover?.url}`
+        : '/img/banner-placeholder.png',
       price: game.price
     }))
   )
@@ -38,7 +40,9 @@ export const highlightMapper = (
       title: highlight?.title,
       subtitle: highlight?.subtitle,
       backgroundImage: `http://localhost:1337${highlight?.background?.url}`,
-      floatImage: `http://localhost:1337${highlight?.floatImage?.url}`,
+      floatImage: highlight.floatImage?.url
+        ? `http://localhost:1337${highlight?.floatImage?.url}`
+        : null,
       buttonLabel: highlight?.buttonLabel,
       buttonLink: highlight?.buttonLink,
       alignment: highlight?.alignment

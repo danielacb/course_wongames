@@ -1,3 +1,4 @@
+import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import theme from 'styles/theme'
 
@@ -16,6 +17,8 @@ describe('<Container />', () => {
       'border-right-color',
       theme.colors.primary
     )
+
+    expect(screen.getByTestId('loading')).toBeInTheDocument()
 
     expect(container.firstChild?.firstChild).toMatchInlineSnapshot(`
       .c0 {

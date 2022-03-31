@@ -53,7 +53,7 @@ const Spinner = styled.div<LoadingProps>`
 `
 
 const Loading = ({ color }: LoadingProps) => (
-  <Wrapper>
+  <Wrapper data-testid="loading">
     <Spinner color={color} />
   </Wrapper>
 )

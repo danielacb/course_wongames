@@ -12,6 +12,7 @@ import Loading from 'components/Loading'
 import Base from 'templates/Base'
 
 import * as S from './styles'
+import EmptyState from 'components/EmptyState'
 
 export type GamesTemplateProps = {
   filterItems: ItemProps[]
@@ -57,24 +58,33 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
           <Loading />
         ) : (
           <section>
-            <Grid>
-              {data &&
-                data.games.map((game) => (
-                  <GameCard
-                    key={game.slug}
-                    slug={game.slug}
-                    title={game.name}
-                    developer={game.developers[0].name}
-                    img={`http://localhost:1337${game.cover?.url}`}
-                    price={game.price}
-                  />
-                ))}
-            </Grid>
-
-            <S.ShowMore role="button" onClick={handleShowMore}>
-              <p>show more</p>
-              <KeyboardArrowDown size={35} />
-            </S.ShowMore>
+            {data?.games.length ? (
+              <>
+                <Grid>
+                  {data &&
+                    data.games.map((game) => (
+                      <GameCard
+                        key={game.slug}
+                        slug={game.slug}
+                        title={game.name}
+                        developer={game.developers[0].name}
+                        img={`http://localhost:1337${game.cover?.url}`}
+                        price={game.price}
+                      />
+                    ))}
+                </Grid>
+                <S.ShowMore role="button" onClick={handleShowMore}>
+                  <p>show more</p>
+                  <KeyboardArrowDown size={35} />
+                </S.ShowMore>
+              </>
+            ) : (
+              <EmptyState
+                title=":("
+                description="We didn't find any games with this filter"
+                hasLink
+              />
+            )}
           </section>
         )}
       </S.Main>

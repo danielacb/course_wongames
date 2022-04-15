@@ -35,24 +35,12 @@ jest.mock('next/link', () => ({
 }))
 
 describe('<Games />', () => {
-  it('should render a loading when starting the template', () => {
-    renderWithTheme(
-      <MockedProvider mocks={gamesMock} addTypename={false}>
-        <Games filterItems={filterItemsMock} />
-      </MockedProvider>
-    )
-
-    expect(screen.getByTestId('loading')).toBeInTheDocument()
-  })
-
   it('should render the sections', async () => {
     renderWithTheme(
       <MockedProvider mocks={gamesMock} addTypename={false}>
         <Games filterItems={filterItemsMock} />
       </MockedProvider>
     )
-
-    expect(screen.getByTestId('loading')).toBeInTheDocument()
 
     expect(await screen.findByText(/sample game/i)).toBeInTheDocument()
 
@@ -71,11 +59,10 @@ describe('<Games />', () => {
       </MockedProvider>
     )
 
-    expect(screen.getByTestId('loading')).toBeInTheDocument()
-
     expect(await screen.findByText(/sample game/i)).toBeInTheDocument()
 
     userEvent.click(await screen.findByRole('button', { name: /show more/i }))
+    expect(screen.getByTestId('loading')).toBeInTheDocument()
 
     expect(await screen.findByText(/fetch more game/i)).toBeInTheDocument()
 

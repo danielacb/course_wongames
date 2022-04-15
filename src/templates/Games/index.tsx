@@ -21,6 +21,7 @@ export type GamesTemplateProps = {
 const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
   const { push, query } = useRouter()
   const { data, loading, fetchMore } = useQueryGames({
+    notifyOnNetworkStatusChange: true,
     variables: {
       limit: 12,
       where: parseQueryStringToWhere({ queryString: query, filterItems }),
@@ -54,39 +55,39 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
           onFilter={handleFilter}
         />
 
-        {loading ? (
-          <Loading />
-        ) : (
-          <section>
-            {data?.games.length ? (
-              <>
-                <Grid>
-                  {data &&
-                    data.games.map((game) => (
-                      <GameCard
-                        key={game.slug}
-                        slug={game.slug}
-                        title={game.name}
-                        developer={game.developers[0].name}
-                        img={`http://localhost:1337${game.cover?.url}`}
-                        price={game.price}
-                      />
-                    ))}
-                </Grid>
+        <section>
+          {data?.games.length ? (
+            <>
+              <Grid>
+                {data &&
+                  data.games.map((game) => (
+                    <GameCard
+                      key={game.slug}
+                      slug={game.slug}
+                      title={game.name}
+                      developer={game.developers[0].name}
+                      img={`http://localhost:1337${game.cover?.url}`}
+                      price={game.price}
+                    />
+                  ))}
+              </Grid>
+              {loading ? (
+                <Loading />
+              ) : (
                 <S.ShowMore role="button" onClick={handleShowMore}>
                   <p>show more</p>
                   <KeyboardArrowDown size={35} />
                 </S.ShowMore>
-              </>
-            ) : (
-              <EmptyState
-                title=":("
-                description="We didn't find any games with this filter"
-                hasLink
-              />
-            )}
-          </section>
-        )}
+              )}
+            </>
+          ) : (
+            <EmptyState
+              title=":("
+              description="We didn't find any games with this filter"
+              hasLink
+            />
+          )}
+        </section>
       </S.Main>
     </Base>
   )

@@ -74,10 +74,13 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
               {loading ? (
                 <Loading />
               ) : (
-                <S.ShowMore role="button" onClick={handleShowMore}>
-                  <p>show more</p>
-                  <KeyboardArrowDown size={35} />
-                </S.ShowMore>
+                data.games.length <
+                  (data.gamesConnection?.values?.length || 0) && (
+                  <S.ShowMore role="button" onClick={handleShowMore}>
+                    <p>show more</p>
+                    <KeyboardArrowDown size={35} />
+                  </S.ShowMore>
+                )
               )}
             </>
           ) : (

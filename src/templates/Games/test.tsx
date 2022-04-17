@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import { fetchMoreMock, gamesMock } from './mocks'
+import { fetchMoreMock, gamesMock, noGamesMock } from './mocks'
 import filterItemsMock from 'components/ExploreSidebar/mock'
 
 import Games from '.'
@@ -65,10 +65,6 @@ describe('<Games />', () => {
     expect(screen.getByTestId('loading')).toBeInTheDocument()
 
     expect(await screen.findByText(/fetch more game/i)).toBeInTheDocument()
-
-    expect(
-      await screen.findByRole('button', { name: /show more/i })
-    ).toBeInTheDocument()
   })
 
   it('should change push router when selecting a filter', async () => {
@@ -93,10 +89,14 @@ describe('<Games />', () => {
 
   it('should render empty when no games found', async () => {
     renderWithTheme(
-      <MockedProvider mocks={[]} addTypename={false}>
+      <MockedProvider mocks={[noGamesMock]} addTypename={false}>
         <Games filterItems={filterItemsMock} />
       </MockedProvider>
     )
+
+    expect(
+      await screen.queryByRole('button', { name: /show more/i })
+    ).not.toBeInTheDocument()
 
     expect(
       await screen.findByText(/We didn't find any games with this filter/i)

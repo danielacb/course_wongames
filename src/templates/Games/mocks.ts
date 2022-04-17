@@ -1,5 +1,21 @@
 import { QUERY_GAMES } from 'graphql/queries/games'
 
+export const noGamesMock = {
+  request: {
+    query: QUERY_GAMES,
+    variables: { limit: 15, where: {} }
+  },
+  result: {
+    data: {
+      games: [],
+      gamesConnection: {
+        values: [],
+        __typename: 'GameConnection'
+      }
+    }
+  }
+}
+
 export const gamesMock = [
   {
     request: {
@@ -19,7 +35,11 @@ export const gamesMock = [
             price: 65.99,
             __typename: 'Game'
           }
-        ]
+        ],
+        gamesConnection: {
+          values: [{ id: '1' }, { id: '2' }],
+          __typename: 'GameConnection'
+        }
       }
     }
   }
@@ -44,7 +64,11 @@ export const fetchMoreMock = [
             price: 62.99,
             __typename: 'Game'
           }
-        ]
+        ],
+        gamesConnection: {
+          values: [{ id: '1' }, { id: '2' }],
+          __typename: 'GameConnection'
+        }
       }
     }
   }

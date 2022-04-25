@@ -14,6 +14,7 @@ const Dropdown = ({ trigger, children }: DropdownProps) => {
       <S.Trigger onClick={() => setIsOpen(!isOpen)}>{trigger}</S.Trigger>
 
       <S.Content aria-hidden={!isOpen}>{children}</S.Content>
+      <S.Overlay aria-hidden={!isOpen} onClick={() => setIsOpen(!isOpen)} />
     </S.Wrapper>
   )
 }

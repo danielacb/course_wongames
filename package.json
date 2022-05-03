@@ -52,7 +52,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.4.1",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^27.5.0",
     "@types/node": "^15.0.2",
     "@types/react": "^17.0.19",
     "@types/react-slick": "^0.23.5",

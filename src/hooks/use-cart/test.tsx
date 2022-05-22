@@ -6,6 +6,10 @@ import { CartProvider, CartProviderProps, useCart } from '.'
 import { cartItems, gamesMock } from './mock'
 
 describe('useCart', () => {
+  beforeEach(() => {
+    setStorageItem('cartItems', [])
+  })
+
   it('should return items and its info if there are any in the cart', async () => {
     const wrapper = ({ children }: CartProviderProps) => (
       <MockedProvider mocks={[gamesMock]}>
@@ -50,13 +54,15 @@ describe('useCart', () => {
       </MockedProvider>
     )
 
-    const { result } = renderHook(() => useCart(), { wrapper })
+    const { result } = renderHook(() => useCart(), {
+      wrapper
+    })
 
     act(() => {
       result.current.addToCart('1')
     })
 
-    expect(result.current.quantity).toBe(2)
+    expect(result.current.quantity).toBe(1)
     expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
       JSON.stringify(['1'])
     )

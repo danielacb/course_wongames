@@ -23,7 +23,11 @@ describe('useCart', () => {
       wrapper
     })
 
+    expect(result.current.loading).toBe(true)
+
     await waitForNextUpdate()
+
+    expect(result.current.loading).toBe(false)
 
     expect(result.current.items).toStrictEqual(cartItems)
     expect(result.current.quantity).toBe(2)
@@ -83,6 +87,29 @@ describe('useCart', () => {
 
     act(() => {
       result.current.removeFromCart('1')
+    })
+
+    expect(result.current.quantity).toBe(0)
+    expect(window.localStorage.getItem('WONGAMES_cartItems')).toBe(
+      JSON.stringify([])
+    )
+  })
+
+  it('should clear the cart', () => {
+    const wrapper = ({ children }: CartProviderProps) => (
+      <MockedProvider mocks={[gamesMock]}>
+        <CartProvider>{children}</CartProvider>
+      </MockedProvider>
+    )
+
+    setStorageItem('cartItems', ['1'])
+
+    const { result } = renderHook(() => useCart(), {
+      wrapper
+    })
+
+    act(() => {
+      result.current.clearCart()
     })
 
     expect(result.current.quantity).toBe(0)

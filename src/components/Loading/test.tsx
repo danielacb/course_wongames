@@ -1,12 +1,10 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
 import theme from 'styles/theme'
-
+import { render, screen } from 'utils/test-utils'
 import Loading from '.'
 
 describe('<Container />', () => {
   it('should render the primary Loading as default', () => {
-    const { container } = renderWithTheme(<Loading />)
+    const { container } = render(<Loading />)
 
     expect(container.firstChild?.firstChild).toHaveStyleRule(
       'border-top-color',
@@ -42,7 +40,7 @@ describe('<Container />', () => {
   })
 
   it('should render the secondary Loading', () => {
-    const { container } = renderWithTheme(<Loading color="secondary" />)
+    const { container } = render(<Loading color="secondary" />)
 
     expect(container.firstChild?.firstChild).toHaveStyleRule(
       'border-top-color',
@@ -56,7 +54,7 @@ describe('<Container />', () => {
   })
 
   it('should render the white Loading', () => {
-    const { container } = renderWithTheme(<Loading color="white" />)
+    const { container } = render(<Loading color="white" />)
 
     expect(container.firstChild?.firstChild).toHaveStyleRule(
       'border-top-color',

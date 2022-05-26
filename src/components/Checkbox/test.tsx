@@ -1,15 +1,11 @@
-import { screen, waitFor } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
 import theme from 'styles/theme'
-
+import { render, screen, waitFor } from 'utils/test-utils'
 import Checkbox from '.'
 
 describe('<Checkbox />', () => {
   it('should render with a label', () => {
-    const { container } = renderWithTheme(
-      <Checkbox label="checkbox label" id="check" />
-    )
+    const { container } = render(<Checkbox label="checkbox label" id="check" />)
 
     expect(screen.getByRole('checkbox')).toBeInTheDocument()
     expect(screen.getByText(/checkbox label/i)).toBeInTheDocument()
@@ -17,15 +13,13 @@ describe('<Checkbox />', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
   it('should not render a label when label prop is not passed', () => {
-    renderWithTheme(<Checkbox />)
+    render(<Checkbox />)
 
     expect(screen.queryByLabelText('Checkbox')).not.toBeInTheDocument()
   })
 
   it('should render with a black label', () => {
-    renderWithTheme(
-      <Checkbox label="checkbox label" id="check" labelColor="black" />
-    )
+    render(<Checkbox label="checkbox label" id="check" labelColor="black" />)
 
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
       color: theme.colors.black
@@ -33,9 +27,7 @@ describe('<Checkbox />', () => {
   })
 
   it('should render with a white label', () => {
-    renderWithTheme(
-      <Checkbox label="checkbox label" id="check" labelColor="white" />
-    )
+    render(<Checkbox label="checkbox label" id="check" labelColor="white" />)
 
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
       color: theme.colors.white
@@ -44,9 +36,7 @@ describe('<Checkbox />', () => {
 
   it('should dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn()
-    renderWithTheme(
-      <Checkbox label="checkbox label" id="check" onCheck={onCheck} />
-    )
+    render(<Checkbox label="checkbox label" id="check" onCheck={onCheck} />)
 
     expect(onCheck).not.toHaveBeenCalled()
 
@@ -60,7 +50,7 @@ describe('<Checkbox />', () => {
 
   it('should dispatch onCheck when status changes and isChecked is passed', async () => {
     const onCheck = jest.fn()
-    renderWithTheme(
+    render(
       <Checkbox label="checkbox label" id="check" onCheck={onCheck} isChecked />
     )
 
@@ -75,7 +65,7 @@ describe('<Checkbox />', () => {
   })
 
   it('should be accessible', () => {
-    renderWithTheme(<Checkbox label="checkbox label" id="check" />)
+    render(<Checkbox label="checkbox label" id="check" />)
 
     expect(document.body).toHaveFocus()
 

@@ -1,6 +1,4 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
-
+import { render, screen } from 'utils/test-utils'
 import EmptyState from '.'
 
 const props = {
@@ -10,7 +8,7 @@ const props = {
 
 describe('<EmptyState />', () => {
   it('should render the EmptyState', () => {
-    const { container } = renderWithTheme(<EmptyState {...props} hasLink />)
+    const { container } = render(<EmptyState {...props} hasLink />)
 
     expect(container.parentElement).toMatchSnapshot()
 
@@ -35,7 +33,7 @@ describe('<EmptyState />', () => {
   })
 
   it('should not render the link when hasLink is not passed', () => {
-    renderWithTheme(<EmptyState {...props} />)
+    render(<EmptyState {...props} />)
 
     expect(
       screen.queryByRole('link', { name: /go back to the store/i })

@@ -1,6 +1,4 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
-
+import { render, screen } from 'utils/test-utils'
 import GameDetails, { GameDetailsProps } from '.'
 
 const props: GameDetailsProps = {
@@ -14,7 +12,7 @@ const props: GameDetailsProps = {
 
 describe('<GameDetails />', () => {
   it('should render the headings', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /developer/i })
@@ -38,7 +36,7 @@ describe('<GameDetails />', () => {
   })
 
   it('should render the platforms icons', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByRole('img', { name: /linux/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /mac/i })).toBeInTheDocument()
@@ -46,37 +44,37 @@ describe('<GameDetails />', () => {
   })
 
   it('should render a formated date', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByText('Nov 21, 2020'))
   })
 
   it('should render the developer', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByText(/different tales/i)).toBeInTheDocument()
   })
 
   it('should render the publisher', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByText(/ubisoft/i)).toBeInTheDocument()
   })
 
   it('should render everyone rating when BR0', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByText(/everyone/i)).toBeInTheDocument()
   })
 
   it('should render 18+ rating when BR18', () => {
-    renderWithTheme(<GameDetails {...props} rating="BR16" />)
+    render(<GameDetails {...props} rating="BR16" />)
 
     expect(screen.getByText(/16\+/i)).toBeInTheDocument()
   })
 
   it('should render a list of genres', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    render(<GameDetails {...props} />)
 
     expect(screen.getByText('Role-playing / Narrative')).toBeInTheDocument()
   })

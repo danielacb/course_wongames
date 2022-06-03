@@ -3,7 +3,7 @@ import GameItem from '.'
 
 const props = {
   img: 'https://source.unsplash.com/user/willianjusten/151x70',
-  title: 'Red Dead Redemption 2',
+  name: 'Red Dead Redemption 2',
   price: 'R$ 215,00'
 }
 
@@ -12,9 +12,9 @@ describe('<GameItem />', () => {
     render(<GameItem {...props} />)
 
     expect(
-      screen.getByRole('heading', { name: props.title })
+      screen.getByRole('heading', { name: props.name })
     ).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
+    expect(screen.getByRole('img', { name: props.name })).toHaveAttribute(
       'src',
       props.img
     )
@@ -27,7 +27,7 @@ describe('<GameItem />', () => {
     render(<GameItem {...props} downloadLink={downloadLink} />)
 
     expect(
-      screen.getByRole('link', { name: `Get ${props.title} here` })
+      screen.getByRole('link', { name: `Get ${props.name} here` })
     ).toHaveAttribute('href', downloadLink)
   })
 

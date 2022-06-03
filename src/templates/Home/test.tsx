@@ -8,12 +8,16 @@ import Home from '.'
 const props = {
   banners: bannersMock,
   newGames: [gamesMock[0]],
+  newGamesTitle: 'New Games',
   mostPopularHighlight: highlightMock,
+  mostPopularGamesTitle: 'Most Popular Games',
   mostPopularGames: [gamesMock[0]],
+  upcomingGamesTitle: 'Upcoming Games',
   upcomingGames: [gamesMock[0]],
   upcomingHighlight: highlightMock,
+  freeGamesTitle: 'Free Games',
   freeGames: [gamesMock[0]],
-  freeHighlight: highlightMock
+  freeGamesHighlight: highlightMock
 }
 
 jest.mock('components/Showcase', () => {

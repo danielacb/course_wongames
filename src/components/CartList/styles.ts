@@ -65,3 +65,8 @@ export const Loading = styled.div`
     min-width: 56rem;
   `}
 `
+
+export const GameList = styled.div`
+  max-height: 40rem;
+  overflow-y: auto;
+`

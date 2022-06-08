@@ -1,7 +1,6 @@
+import * as EmptyStateStyles from 'components/EmptyState/styles'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
-
-import * as EmptyStateStyles from 'components/EmptyState/styles'
 
 type WrapperProps = {
   isEmpty: boolean
@@ -53,5 +52,16 @@ export const Footer = styled.div`
 export const Total = styled.span`
   ${({ theme }) => css`
     color: ${theme.colors.primary};
+  `}
+`
+
+export const Loading = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.white};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40rem;
+    min-width: 56rem;
   `}
 `

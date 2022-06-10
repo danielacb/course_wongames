@@ -11,6 +11,7 @@ type CartItem = {
   img: string
   name: string
   price: string
+  slug: string
 }
 
 export type CartContextData = {

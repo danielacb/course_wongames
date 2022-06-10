@@ -61,7 +61,8 @@ export const cartItemsMapper = (
           ? `http://localhost:1337${game.cover.url}`
           : '/img/banner-placeholder.png',
         name: game.name,
-        price: formatPrice(game.price)
+        price: formatPrice(game.price),
+        slug: game.slug
       }))
     : []
 }

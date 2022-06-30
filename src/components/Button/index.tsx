@@ -1,3 +1,4 @@
+import Loading from 'components/Loading'
 import React, {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
@@ -15,11 +16,12 @@ export type ButtonProps = {
   fullWidth?: boolean
   icon?: React.ReactNode
   minimal?: boolean
+  loading?: boolean
   as?: React.ElementType
 } & ButtonTypes
 
 const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
-  { children, size, fullWidth, icon, minimal, ...props },
+  { children, size, fullWidth, icon, minimal, loading, ...props },
   ref
 ) => (
   <S.Wrapper
@@ -30,8 +32,14 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     ref={ref}
     {...props}
   >
-    {!!icon && icon}
-    {!!children && <span>{children}</span>}
+    {loading ? (
+      <Loading color="white" size="small" />
+    ) : (
+      <>
+        {!!icon && icon}
+        {!!children && <span>{children}</span>}
+      </>
+    )}
   </S.Wrapper>
 )
 

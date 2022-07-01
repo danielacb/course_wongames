@@ -12,10 +12,13 @@ import * as S from './styles'
 
 const FormSignIn = () => {
   const [values, setValues] = useState({})
+  const [loading, setLoading] = useState(false)
   const { push } = useRouter()
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
+    setLoading(true)
+
     const result = await signIn('credentials', {
       ...values,
       redirect: false,
@@ -25,6 +28,8 @@ const FormSignIn = () => {
     if (result?.url) {
       push(result.url)
     }
+
+    setLoading(false)
 
     console.error('invalid email or password')
   }
@@ -53,7 +58,7 @@ const FormSignIn = () => {
         />
         <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
 
-        <Button type="submit" fullWidth size="large">
+        <Button type="submit" fullWidth size="large" loading={loading}>
           Sign in now
         </Button>
 

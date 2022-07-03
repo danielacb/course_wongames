@@ -5,6 +5,7 @@ import { FormLink, FormWrapper } from 'components/Form'
 import TextField from 'components/TextField'
 import { UsersPermissionsRegisterInput } from 'graphql/generated/globalTypes'
 import { MUTATION_REGISTER } from 'graphql/mutations/register'
+import { signIn } from 'next-auth/client'
 import Link from 'next/link'
 import { FormEvent, useState } from 'react'
 
@@ -35,7 +36,17 @@ const FormSignUp = () => {
     setValues((prevState) => ({ ...prevState, [field]: value }))
   }
 
-  const [createUser] = useMutation(MUTATION_REGISTER)
+  const [createUser, { error, loading }] = useMutation(MUTATION_REGISTER, {
+    onError: (err) => console.error(err),
+    onCompleted: () => {
+      !error &&
+        signIn('credentials', {
+          email: values.email,
+          password: values.password,
+          callbackUrl: '/'
+        })
+    }
+  })
   return (
     <FormWrapper>
       <form onSubmit={handleSubmit}>
@@ -68,7 +79,13 @@ const FormSignUp = () => {
           icon={<Lock />}
           onInputChange={(value) => handleInput('confirm-password', value)}
         />
-        <Button type="submit" fullWidth size="large">
+        <Button
+          type="submit"
+          fullWidth
+          size="large"
+          loading={loading}
+          disabled={loading}
+        >
           Sign up now
         </Button>
         <FormLink>

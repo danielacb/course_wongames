@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
-import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
+import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
+import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
+import Link from 'next/link'
+import { useState } from 'react'
 
-import Logo from 'components/Logo'
 import Button from 'components/Button'
-import CartIcon from 'components/CartIcon'
-import MediaMatch from 'components/MediaMatch'
 import CartDropdown from 'components/CartDropdown'
+import CartIcon from 'components/CartIcon'
+import Logo from 'components/Logo'
+import MediaMatch from 'components/MediaMatch'
 import UserDropdown from 'components/UserDropdown'
 
 import * as S from './styles'
 
 export type MenuProps = {
-  username?: string
+  username?: string | null
 }
 
 const Menu = ({ username }: MenuProps) => {

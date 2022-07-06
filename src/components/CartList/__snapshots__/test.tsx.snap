@@ -120,6 +120,11 @@ exports[`<CartList /> should render the CartList 1`] = `
   overflow-y: auto;
 }
 
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 @media (min-width:768px) {
   .c2 {
     display: -webkit-box;
@@ -157,74 +162,82 @@ exports[`<CartList /> should render the CartList 1`] = `
   <div
     class="c1"
   >
-    <div
-      class="c2"
+    <a
+      href="/game/undefined"
     >
       <div
-        class="c3"
+        class="c2"
       >
         <div
-          class="c4"
+          class="c3"
         >
-          <img
-            alt="Red Dead Redemption 2"
-            src="https://source.unsplash.com/user/willianjusten/151x70"
-          />
-        </div>
-        <div
-          class="c5"
-        >
-          <h3
-            class="c6"
-          >
-            Red Dead Redemption 2
-          </h3>
           <div
-            class="c7"
+            class="c4"
           >
-            <p
-              class="c8"
+            <img
+              alt="Red Dead Redemption 2"
+              src="https://source.unsplash.com/user/willianjusten/151x70"
+            />
+          </div>
+          <div
+            class="c5"
+          >
+            <h3
+              class="c6"
             >
-              R$ 215,00
-            </p>
+              Red Dead Redemption 2
+            </h3>
+            <div
+              class="c7"
+            >
+              <p
+                class="c8"
+              >
+                R$ 215,00
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="c2"
+    </a>
+    <a
+      href="/game/undefined"
     >
       <div
-        class="c3"
+        class="c2"
       >
         <div
-          class="c4"
+          class="c3"
         >
-          <img
-            alt="Borderlands 3"
-            src="https://source.unsplash.com/user/willianjusten/151x70"
-          />
-        </div>
-        <div
-          class="c5"
-        >
-          <h3
-            class="c6"
-          >
-            Borderlands 3
-          </h3>
           <div
-            class="c7"
+            class="c4"
           >
-            <p
-              class="c8"
+            <img
+              alt="Borderlands 3"
+              src="https://source.unsplash.com/user/willianjusten/151x70"
+            />
+          </div>
+          <div
+            class="c5"
+          >
+            <h3
+              class="c6"
             >
-              R$ 215,00
-            </p>
+              Borderlands 3
+            </h3>
+            <div
+              class="c7"
+            >
+              <p
+                class="c8"
+              >
+                R$ 215,00
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     class="c9"

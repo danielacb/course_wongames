@@ -117,7 +117,8 @@ describe('cartItemsMapper()', () => {
         url: '/image.jpg'
       },
       name: 'game',
-      price: 10
+      price: 10,
+      slug: 'sample-game'
     } as QueryGames_games
 
     expect(cartItemsMapper([game])).toStrictEqual([
@@ -125,7 +126,8 @@ describe('cartItemsMapper()', () => {
         id: '1',
         img: 'http://localhost:1337/image.jpg',
         name: 'game',
-        price: '$10.00'
+        price: '$10.00',
+        slug: 'sample-game'
       }
     ])
   })

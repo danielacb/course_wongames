@@ -23,12 +23,12 @@ describe('<Container />', () => {
         display: inline-block;
         border-color: rgba(255,255,255,0.2);
         border-style: solid;
-        border-width: 0.5rem;
         border-radius: 50%;
-        width: 4rem;
-        height: 4rem;
         -webkit-animation: eoUyJr 1s infinite linear;
         animation: eoUyJr 1s infinite linear;
+        width: 4rem;
+        height: 4rem;
+        border-width: 0.5rem;
         border-top-color: #F231A5;
         border-right-color: #F231A5;
       }

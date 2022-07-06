@@ -46,12 +46,14 @@ export const cartItems = [
     id: '1',
     img: 'http://localhost:1337/sample-game.jpg',
     price: '$10.50',
-    name: 'Sample Game'
+    name: 'Sample Game',
+    slug: 'sample-game'
   },
   {
     id: '2',
     img: 'http://localhost:1337/sample-game.jpg',
     price: '$10.50',
-    name: 'Sample Game'
+    name: 'Sample Game',
+    slug: 'sample-game'
   }
 ]

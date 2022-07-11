@@ -8,7 +8,7 @@ export default async function protectedRoutes(
 
   if (!session) {
     context.res.writeHead(302, {
-      Location: '/signin'
+      Location: `/signin?callbackUrl=${context.resolvedUrl}`
     })
     context.res.end()
   }

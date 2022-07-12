@@ -26,18 +26,19 @@ export async function getStaticProps() {
     props: {
       banners: bannerMapper(banners),
 
-      newGamesTitle: sections?.newGames?.title,
+      newGamesTitle: sections?.newGames?.title || 'New Games',
       newGames: gamesMapper(newGames),
 
-      mostPopularGamesTitle: sections?.popularGames?.title,
+      mostPopularGamesTitle:
+        sections?.popularGames?.title || 'Most Popular Games',
       mostPopularGames: gamesMapper(sections?.popularGames?.games),
       mostPopularHighlight: highlightMapper(sections?.popularGames?.highlight),
 
-      upcomingGamesTitle: sections?.upcomingGames?.title,
+      upcomingGamesTitle: sections?.upcomingGames?.title || 'Upcoming Games',
       upcomingGames: gamesMapper(upcomingGames),
       upcomingHighlight: highlightMapper(sections?.upcomingGames?.highlight),
 
-      freeGamesTitle: sections?.freeGames?.title,
+      freeGamesTitle: sections?.freeGames?.title || 'Free games',
       freeGames: gamesMapper(freeGames),
       freeGamesHighlight: highlightMapper(sections?.freeGames?.highlight)
     }

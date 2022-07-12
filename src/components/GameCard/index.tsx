@@ -3,6 +3,7 @@ import CartButton from 'components/CartButton'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import Link from 'next/link'
 import formatPrice from 'utils/formatPrice'
+import { imageOnErrorHandler } from 'utils/imageOnErrorHandler'
 import * as S from './styles'
 
 export type GameCardProps = {
@@ -43,7 +44,13 @@ const GameCard = ({
 
     <Link href={`game/${slug}`} passHref>
       <S.ImageBox>
-        <img src={img} alt={title} />
+        <img
+          src={img}
+          alt={title}
+          onError={(event) =>
+            imageOnErrorHandler(event, '/img/banner-placeholder.png')
+          }
+        />
       </S.ImageBox>
     </Link>
 

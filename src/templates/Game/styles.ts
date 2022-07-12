@@ -22,7 +22,7 @@ export const Cover = styled.div<CoverProps>`
     right: 0;
     left: 0;
     height: 39.5rem;
-    background-image: url(${src});
+    background-image: url(${src}), url('/img/banner-placeholder.png');
     background-size: cover;
     background-position: top center;
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import SlickSlider, { Settings as SliderSettings } from 'react-slick'
+import { imageOnErrorHandler } from 'utils/imageOnErrorHandler'
 import Slider from 'components/Slider'
 
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos'
@@ -88,6 +89,9 @@ const Gallery = ({ images }: GalleryProps) => {
               setIsOpen(true)
               slider.current && slider.current.slickGoTo(index, true)
             }}
+            onError={(event) =>
+              imageOnErrorHandler(event, '/img/banner-placeholder.png')
+            }
           />
         ))}
       </Slider>
@@ -107,6 +111,9 @@ const Gallery = ({ images }: GalleryProps) => {
                 key={`gallery-${image.src}`}
                 src={image.src}
                 alt={image.label}
+                onError={(event) =>
+                  imageOnErrorHandler(event, '/img/banner-placeholder.png')
+                }
               />
             ))}
           </Slider>

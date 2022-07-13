@@ -291,8 +291,8 @@ exports[`<FormSignUp /> should render the form 1`] = `
         </span>
         <input
           class="c5"
-          id="confirm-password"
-          name="confirm-password"
+          id="confirm_password"
+          name="confirm_password"
           placeholder="Confirm password"
           type="password"
           value=""

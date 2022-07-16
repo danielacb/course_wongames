@@ -54,6 +54,10 @@ export const BannerContent = styled.div`
       width: fit-content;
       height: fit-content;
     }
+
+    ${HeadingStyles.Wrapper} {
+      max-width: 52rem;
+    }
   `}
 `
 

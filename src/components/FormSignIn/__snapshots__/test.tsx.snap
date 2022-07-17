@@ -174,7 +174,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
               id="email"
               name="email"
               placeholder="Email"
-              type="email"
+              type="text"
               value=""
             />
           </div>

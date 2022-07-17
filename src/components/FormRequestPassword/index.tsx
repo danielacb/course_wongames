@@ -47,7 +47,7 @@ const FormRequestPassword = () => {
         <TextField
           name="email"
           placeholder="Email"
-          type="email"
+          type="text"
           icon={<Email />}
           onInputChange={(value) => handleInput('email', value)}
           error={fieldErrors?.email}

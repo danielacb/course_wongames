@@ -23,7 +23,7 @@ const FormProfile = ({ username, email }: FormProfileProps) => (
         initialValue={username}
       />
       <TextField
-        type="email"
+        type="text"
         name="email"
         placeholder="E-mail"
         label="E-mail"

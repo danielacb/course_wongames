@@ -78,7 +78,9 @@ const FormSignIn = () => {
           onInputChange={(value) => handleInput('password', value)}
           error={fieldErrors?.password}
         />
-        <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
+        <Link href="/reset-password/new" passHref>
+          <S.ForgotPassword>Forgot your password?</S.ForgotPassword>
+        </Link>
 
         <Button type="submit" fullWidth size="large" loading={loading}>
           Sign in now

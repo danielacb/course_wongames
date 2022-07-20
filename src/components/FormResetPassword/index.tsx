@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+import { signIn } from 'next-auth/client'
 import { Lock, ErrorOutline } from '@styled-icons/material-outlined'
 import { FormEvent, useState } from 'react'
 
@@ -12,6 +14,7 @@ const FormResetPassword = () => {
   const [loading, setLoading] = useState(false)
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [formError, setFormError] = useState('')
+  const { query } = useRouter()
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
@@ -28,7 +31,32 @@ const FormResetPassword = () => {
     setFieldErrors({})
     setFormError('')
 
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
+      {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          code: query.code,
+          password: values.password,
+          passwordConfirmation: values.confirm_password
+        })
+      }
+    )
+
+    const data = await response.json()
     setLoading(false)
+
+    if (data.error) {
+      setFormError(data.message[0].messages[0].message)
+      setLoading(false)
+    } else {
+      signIn('credentials', {
+        email: data.user.email,
+        password: values.password,
+        callbackUrl: '/'
+      })
+    }
   }
 
   const handleInput = (

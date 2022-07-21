@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import {
   CheckCircleOutline,
   Email,
@@ -13,7 +14,8 @@ import { FieldErrors, requestPasswordValidate } from 'utils/validations'
 import Heading from 'components/Heading'
 
 const FormRequestPassword = () => {
-  const [values, setValues] = useState({ email: '' })
+  const { query } = useRouter()
+  const [values, setValues] = useState({ email: (query.email as string) || '' })
   const [loading, setLoading] = useState(false)
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [formError, setFormError] = useState('')
@@ -80,6 +82,7 @@ const FormRequestPassword = () => {
               placeholder="Email"
               type="text"
               icon={<Email />}
+              initialValue={query.email as string}
               onInputChange={(value) => handleInput('email', value)}
               error={fieldErrors?.email}
             />

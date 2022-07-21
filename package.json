@@ -33,6 +33,7 @@
     "@apollo/client": "^3.5.10",
     "@styled-icons/fa-brands": "^10.38.0",
     "@types/lodash.xor": "^4.5.7",
+    "dotenv": "^16.0.1",
     "graphql": "^15.5.1",
     "joi": "^17.6.0",
     "lodash.xor": "^4.5.0",

@@ -49,7 +49,8 @@ export const handlers = [
       const { code } = req.body
 
       if (code === 'wrong_code') {
-        ctx.status(400),
+        return res(
+          ctx.status(400),
           ctx.json({
             error: 'Bad Request',
             message: [
@@ -62,6 +63,7 @@ export const handlers = [
               }
             ]
           })
+        )
       }
 
       return res(

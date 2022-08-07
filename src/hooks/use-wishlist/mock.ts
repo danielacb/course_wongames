@@ -99,5 +99,13 @@ export const wishlistItems = [
     developer: 'sample developer',
     img: 'http://localhost:1337/sample-game.jpg',
     price: 10.5
+  },
+  {
+    id: '3',
+    title: 'Sample Game 3',
+    slug: 'sample-game-3',
+    developer: 'sample developer',
+    img: 'http://localhost:1337/sample-game.jpg',
+    price: 10.5
   }
 ]

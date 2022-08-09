@@ -15,13 +15,15 @@ export type WishlistContextData = {
   loading: boolean
   isInWishlist: (id: string) => boolean
   addToWishlist: (id: string) => void
+  removeFromWishlist: (id: string) => void
 }
 
 export const WishlistContextDefaultValues = {
   items: [],
   loading: false,
   isInWishlist: () => false,
-  addToWishlist: () => null
+  addToWishlist: () => null,
+  removeFromWishlist: () => null
 }
 
 export const WishlistContext = createContext<WishlistContextData>(
@@ -96,12 +98,24 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
     })
   }
 
+  const removeFromWishlist = (id: string) => {
+    return updateWishist({
+      variables: {
+        input: {
+          where: { id: wishlistId },
+          data: { games: wishlistIds.filter((gameId) => gameId !== id) }
+        }
+      }
+    })
+  }
+
   return (
     <WishlistContext.Provider
       value={{
         items: gamesMapper(wishlistItems),
         isInWishlist,
         addToWishlist,
+        removeFromWishlist,
         loading: loadingQuery || loadingCreate || loadingUpdate
       }}
     >

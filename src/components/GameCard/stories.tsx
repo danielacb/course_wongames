@@ -20,7 +20,6 @@ export default {
     favorite: false
   },
   argTypes: {
-    onFav: { action: 'clicked' },
     ribbon: { type: 'string' }
   }
 } as Meta

@@ -72,6 +72,10 @@ export const Wrapper = styled.button<WrapperProps>`
     align-items: center;
     justify-content: center;
 
+    &:focus {
+      outline: 1px dashed;
+    }
+
     &:hover {
       background: ${minimal
         ? 'none'

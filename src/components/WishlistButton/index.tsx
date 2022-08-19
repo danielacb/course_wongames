@@ -4,6 +4,7 @@ import { Favorite, FavoriteBorder } from '@styled-icons/material-outlined'
 import { useSession } from 'next-auth/client'
 import { useState } from 'react'
 import Loading from 'components/Loading'
+import styled from 'styled-components'
 
 type WishlistButtonProps = {
   id: string
@@ -34,7 +35,9 @@ const WishlistButton = ({
     <Button
       icon={
         loading ? (
-          <Loading size="small" />
+          <LoadingContainer>
+            <Loading size="small" />
+          </LoadingContainer>
         ) : isInWishlist(id) ? (
           <Favorite aria-label={ButtonText} />
         ) : (
@@ -51,3 +54,7 @@ const WishlistButton = ({
 }
 
 export default WishlistButton
+
+const LoadingContainer = styled.div`
+  width: 2.5rem;
+`

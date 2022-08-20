@@ -1,3 +1,4 @@
+import 'session.mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 import 'match-media-mock'

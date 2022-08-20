@@ -1,3 +1,4 @@
+import 'session.mock'
 import 'match-media-mock'
 import theme from 'styles/theme'
 import { render, screen } from 'utils/test-utils'

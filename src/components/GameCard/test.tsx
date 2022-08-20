@@ -1,3 +1,4 @@
+import 'session.mock'
 import theme from 'styles/theme'
 import { render, screen } from 'utils/test-utils'
 import GameCard from '.'

@@ -1,5 +1,8 @@
 {
   "trailingComma": "none",
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "importOrder": ["^react$", "^next$", "<THIRD_PARTY_MODULES>", "components/"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

@@ -7,9 +7,6 @@ import { initializeApollo } from 'utils/apollo'
 import { gamesMapper, highlightMapper } from 'utils/mappers'
 import protectedRoutes from 'utils/protected-routes'
 
-import itemsMock from 'components/CartList/mock'
-import cardsMock from 'components/PaymentOptions/mock'
-
 export default function CartPage(props: CartProps) {
   return <Cart {...props} />
 }
@@ -25,9 +22,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
       session,
-      items: itemsMock,
-      total: '$ 1320.22',
-      cards: cardsMock,
       recommendedTitle: data.recommended?.section?.title,
       recommendedGames: gamesMapper(data.recommended?.section?.games),
       recommendedHighlight: highlightMapper(

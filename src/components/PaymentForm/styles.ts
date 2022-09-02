@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import * as ButtonStyles from 'components/Button/styles'
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.form``
 
 export const Body = styled.div`
   ${({ theme }) => css`
@@ -38,5 +38,11 @@ export const Error = styled.p`
     svg {
       margin-right: ${theme.spacings.xxsmall};
     }
+  `}
+`
+
+export const FreeGames = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
   `}
 `

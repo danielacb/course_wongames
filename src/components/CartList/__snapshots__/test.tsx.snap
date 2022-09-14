@@ -163,7 +163,7 @@ exports[`<CartList /> should render the CartList 1`] = `
     class="c1"
   >
     <a
-      href="/game/undefined"
+      href="/game/red-dead-redemption-2"
     >
       <div
         class="c2"
@@ -201,7 +201,7 @@ exports[`<CartList /> should render the CartList 1`] = `
       </div>
     </a>
     <a
-      href="/game/undefined"
+      href="/game/borderlands-3"
     >
       <div
         class="c2"

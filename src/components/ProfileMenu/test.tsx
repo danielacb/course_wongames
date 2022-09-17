@@ -3,6 +3,13 @@ import theme from 'styles/theme'
 import { render, screen } from 'utils/test-utils'
 
 describe('<ProfileMenu />', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+
+  useRouter.mockImplementation(() => ({
+    query: {}
+  }))
+
   it('should render the menu', () => {
     const { container } = render(<ProfileMenu />)
 

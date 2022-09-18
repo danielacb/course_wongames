@@ -1,3 +1,4 @@
+import '../.jest/next-image.mock'
 import { CartContext, CartContextDefaultValues } from 'hooks/use-cart'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/global'

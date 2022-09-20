@@ -1,7 +1,6 @@
+import { HighlightProps } from '.'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
-
-import { HighlightProps } from '.'
 
 const wrapperModifier = {
   left: () => css`
@@ -12,7 +11,7 @@ const wrapperModifier = {
       text-align: left;
     }
 
-    ${FloatImage} {
+    ${FloatImageWrapper} {
       justify-self: end;
     }
   `,
@@ -27,16 +26,12 @@ const wrapperModifier = {
   `
 }
 
-type WrapperProps = Pick<HighlightProps, 'backgroundImage' | 'alignment'>
+type WrapperProps = Pick<HighlightProps, 'alignment'>
 
 export const Wrapper = styled.section<WrapperProps>`
-  ${({ backgroundImage, alignment = 'right' }) => css`
+  ${({ alignment = 'right' }) => css`
     position: relative;
     height: 23rem;
-    background-image: url(${backgroundImage});
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     display: grid;
 
     ${!!alignment && wrapperModifier[alignment]()}
@@ -47,6 +42,11 @@ export const Wrapper = styled.section<WrapperProps>`
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    img {
+      position: absolute;
+      object-fit: cover;
     }
 
     ${media.greaterThan('medium')`
@@ -91,13 +91,18 @@ export const Subtitle = styled.h2`
   `}
 `
 
-export const FloatImage = styled.img`
+export const FloatImageWrapper = styled.div`
   ${({ theme }) => css`
     grid-area: floatimage;
     align-self: end;
     z-index: ${theme.layers.base};
     max-height: 23rem;
     max-width: 100%;
+
+    img {
+      position: relative;
+      object-fit: contain;
+    }
 
     ${media.greaterThan('medium')`
       max-height: 32rem;

@@ -1,6 +1,6 @@
-import { render, screen } from 'utils/test-utils'
 import Highlight from '.'
 import * as S from './styles'
+import { render, screen } from 'utils/test-utils'
 
 const props = {
   title: 'Heading 1',
@@ -34,11 +34,11 @@ describe('<Highlight />', () => {
   })
 
   it('should render background image', () => {
-    const { container } = render(<Highlight {...props} />)
+    render(<Highlight {...props} />)
 
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
-    })
+    expect(
+      screen.getByRole('img', { name: `${props.title} background` })
+    ).toHaveAttribute('src', `${props.backgroundImage}`)
   })
 
   it('should be right aligned by default', () => {

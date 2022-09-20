@@ -1,6 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GameCard /> should render the GameCard 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+}
+
+.c1 {
+  min-height: 14rem;
+  position: relative;
+  width: 100%;
+  background: #f6f7f8;
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-size: 80rem 14rem;
+  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
+  margin: 1.6rem;
+}
+
+.c3 {
+  max-width: calc(100% - 2.5rem);
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4 {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+  color: #030517;
+}
+
+.c5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #8F8F8F;
+}
+
+.c6 {
+  color: #F231A5;
+  position: absolute;
+  right: -1rem;
+  top: -0.5rem;
+  cursor: pointer;
+}
+
+.c6 svg {
+  width: 2.5rem;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.c10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  height: 3rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #FAFAFA;
+  padding: 0 0.8rem;
+  background-color: #3CD3C1;
+  border-radius: 0.4rem;
+  margin-right: calc(0.8rem / 2);
+}
+
 .c8 {
   display: inline-block;
   vertical-align: middle;
@@ -95,119 +203,6 @@ exports[`<GameCard /> should render the GameCard 1`] = `
   margin-left: 0.8rem;
 }
 
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  background-color: #FAFAFA;
-}
-
-.c1 {
-  height: 14rem;
-  width: 100%;
-  background: #f6f7f8;
-  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
-  background-size: 80rem 14rem;
-  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
-  animation: placeholderShimmer 1s linear infinite forwards;
-}
-
-.c1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  height: 100%;
-  margin: 1.6rem;
-}
-
-.c3 {
-  max-width: calc(100% - 2.5rem);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c4 {
-  font-size: 1.6rem;
-  line-height: 1.6rem;
-  font-weight: 600;
-  color: #030517;
-}
-
-.c5 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #8F8F8F;
-}
-
-.c6 {
-  color: #F231A5;
-  position: absolute;
-  right: -1rem;
-  top: -0.5rem;
-  cursor: pointer;
-}
-
-.c6 svg {
-  width: 2.5rem;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  margin-top: 0.8rem;
-}
-
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-weight: 600;
-  height: 3rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #FAFAFA;
-  padding: 0 0.8rem;
-  background-color: #3CD3C1;
-  border-radius: 0.4rem;
-  margin-right: calc(0.8rem / 2);
-}
-
 <article
   class="c0"
 >
@@ -217,6 +212,7 @@ exports[`<GameCard /> should render the GameCard 1`] = `
   >
     <img
       alt="Population Zero"
+      layout="fill"
       src="https://source.unsplash.com/user/willianjusten/300x140"
     />
   </a>

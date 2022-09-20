@@ -1,10 +1,11 @@
+import * as S from './styles'
+import Link from 'next/link'
+import formatPrice from 'utils/formatPrice'
+import { ImageWithFallback } from 'utils/imageOnErrorHandler'
+
 import CartButton from 'components/CartButton'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import WishlistButton from 'components/WishlistButton'
-import Link from 'next/link'
-import formatPrice from 'utils/formatPrice'
-import { imageOnErrorHandler } from 'utils/imageOnErrorHandler'
-import * as S from './styles'
 
 export type GameCardProps = {
   id: string
@@ -41,13 +42,7 @@ const GameCard = ({
 
     <Link href={`game/${slug}`} passHref>
       <S.ImageBox>
-        <img
-          src={img}
-          alt={title}
-          onError={(event) =>
-            imageOnErrorHandler(event, '/img/banner-placeholder.png')
-          }
-        />
+        <ImageWithFallback src={img} alt={title} />
       </S.ImageBox>
     </Link>
 

@@ -15,7 +15,7 @@ type ImageWithFallbackProps = {
   src: string
   alt: string
   fallback?: string
-}
+} & React.ImgHTMLAttributes<HTMLImageElement>
 
 export const ImageWithFallback = ({
   src,

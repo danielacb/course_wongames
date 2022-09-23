@@ -1,5 +1,5 @@
-import { render, screen } from 'utils/test-utils'
 import Auth from '.'
+import { render, screen } from 'utils/test-utils'
 
 describe('<Auth />', () => {
   it('should render components props and children', () => {
@@ -9,7 +9,7 @@ describe('<Auth />', () => {
       </Auth>
     )
 
-    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
+    expect(screen.getAllByRole('img', { name: 'Won Games' })).toHaveLength(2)
 
     expect(
       screen.getByRole('heading', {

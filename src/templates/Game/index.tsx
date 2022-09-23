@@ -1,14 +1,15 @@
+import * as S from './styles'
 import Base from 'templates/Base'
-import GameInfo, { GameInfoProps } from 'components/GameInfo'
+import { ImageWithFallback } from 'utils/imageOnErrorHandler'
+
+import { Divider } from 'components/Divider'
 import Gallery, { GalleryImageProps } from 'components/Gallery'
-import TextContent from 'components/TextContent'
-import GameDetails, { GameDetailsProps } from 'components/GameDetails'
 import { GameCardProps } from 'components/GameCard'
+import GameDetails, { GameDetailsProps } from 'components/GameDetails'
+import GameInfo, { GameInfoProps } from 'components/GameInfo'
 import { HighlightProps } from 'components/Highlight'
 import Showcase from 'components/Showcase'
-import { Divider } from 'components/Divider'
-
-import * as S from './styles'
+import TextContent from 'components/TextContent'
 
 export type GameTemplateProps = {
   cover: string
@@ -36,7 +37,13 @@ const Game = ({
   recommendedGames
 }: GameTemplateProps) => (
   <Base>
-    <S.Cover src={cover} role="image" aria-label="cover" />
+    <S.Cover>
+      <ImageWithFallback
+        src={cover}
+        alt={gameInfo.title}
+        fallback="/img/banner-placeholder.png"
+      />
+    </S.Cover>
     <S.Main>
       <S.SectionGameInfo>
         <GameInfo {...gameInfo} />

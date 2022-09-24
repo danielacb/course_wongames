@@ -4,10 +4,11 @@ import { QueryHome_banners } from 'graphql/generated/QueryHome'
 import { QueryOrders_orders } from 'graphql/generated/QueryOrders'
 import { QueryWishlist_wishlists_games } from 'graphql/generated/QueryWishlist'
 import formatPrice from 'utils/formatPrice'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export const bannerMapper = (banners: QueryHome_banners[]) => {
   return banners.map((banner) => ({
-    img: `http://localhost:1337${banner.image?.url}`,
+    img: getImageUrl({ url: banner.image?.url }),
     title: banner.title,
     subtitle: banner.subtitle,
     buttonLabel: banner.button?.label,
@@ -29,9 +30,7 @@ export const gamesMapper = (
         title: game.name,
         slug: game.slug,
         developer: game.developers[0].name,
-        img: game.cover?.url
-          ? `http://localhost:1337${game.cover?.url}`
-          : '/img/banner-placeholder.png',
+        img: getImageUrl({ url: game.cover?.url }),
         price: game.price
       }))
     : []
@@ -44,9 +43,9 @@ export const highlightMapper = (
     ? {
         title: highlight?.title,
         subtitle: highlight?.subtitle,
-        backgroundImage: `http://localhost:1337${highlight?.background?.url}`,
+        backgroundImage: getImageUrl({ url: highlight?.background?.url }),
         floatImage: highlight.floatImage?.url
-          ? `http://localhost:1337${highlight?.floatImage?.url}`
+          ? getImageUrl({ url: highlight?.floatImage?.url })
           : null,
         buttonLabel: highlight?.buttonLabel,
         buttonLink: highlight?.buttonLink,
@@ -61,9 +60,7 @@ export const cartItemsMapper = (
   return games
     ? games.map((game) => ({
         id: game.id,
-        img: game.cover?.url
-          ? `http://localhost:1337${game.cover.url}`
-          : '/img/banner-placeholder.png',
+        img: getImageUrl({ url: game.cover?.url }),
         name: game.name,
         price: formatPrice(game.price),
         slug: game.slug
@@ -93,9 +90,7 @@ export const ordersMapper = (orders: QueryOrders_orders[] | undefined) => {
             name: game.name,
             downloadLink:
               'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
-            img: game.cover?.url
-              ? `http://localhost:1337${game.cover.url}`
-              : '/img/banner-placeholder.png',
+            img: getImageUrl({ url: game.cover?.url }),
             price: formatPrice(game.price)
           }))
         }

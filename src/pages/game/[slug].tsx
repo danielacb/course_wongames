@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next'
+
 import {
   QueryGameBySlug,
   QueryGameBySlugVariables
@@ -11,10 +13,10 @@ import {
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from 'graphql/queries/games'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QUERY_UPCOMING } from 'graphql/queries/upcoming'
-import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import Game, { GameTemplateProps } from 'templates/Game'
 import { initializeApollo } from 'utils/apollo'
+import { getImageUrl } from 'utils/getImageUrl'
 import { gamesMapper, highlightMapper } from 'utils/mappers'
 
 const apolloClient = initializeApollo()
@@ -70,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     revalidate: 60,
     props: {
-      cover: `http://localhost:1337${game.cover?.src}`,
+      cover: getImageUrl({ url: game.cover?.src }),
       gameInfo: {
         id: game.id,
         title: game.name,
@@ -78,7 +80,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         description: game.short_description
       },
       gallery: game.gallery.map((image) => ({
-        src: `http://localhost:1337${image.url}`,
+        src: getImageUrl({ url: image.url }),
         label: image.label
       })),
       description: game.description,

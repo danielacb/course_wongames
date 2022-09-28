@@ -1,4 +1,5 @@
 import * as S from './styles'
+import { NextSeo } from 'next-seo'
 import Base from 'templates/Base'
 import { ImageWithFallback } from 'utils/imageOnErrorHandler'
 
@@ -12,6 +13,7 @@ import Showcase from 'components/Showcase'
 import TextContent from 'components/TextContent'
 
 export type GameTemplateProps = {
+  slug: string
   cover: string
   gameInfo: GameInfoProps
   gallery?: GalleryImageProps[]
@@ -25,6 +27,7 @@ export type GameTemplateProps = {
 }
 
 const Game = ({
+  slug,
   cover,
   gameInfo,
   gallery,
@@ -37,6 +40,22 @@ const Game = ({
   recommendedGames
 }: GameTemplateProps) => (
   <Base>
+    <NextSeo
+      title={`${gameInfo.title} - Won Games`}
+      description={gameInfo.description}
+      canonical={`https://www.wongames.danielacb.com/game/${slug}`}
+      openGraph={{
+        url: `https://www.wongames.danielacb.com/game/${slug}`,
+        title: `${gameInfo.title} - Won Games`,
+        description: gameInfo.description,
+        images: [
+          {
+            url: cover,
+            alt: `${gameInfo.title}`
+          }
+        ]
+      }}
+    />
     <S.Cover>
       <ImageWithFallback
         src={cover}

@@ -1,27 +1,26 @@
+import * as S from './styles'
 import Link from 'next/link'
 
 import Heading from 'components/Heading'
 import Logo from 'components/Logo'
-
-import * as S from './styles'
 
 const Footer = () => (
   <S.Wrapper>
     <Logo color="black" />
 
     <S.Content>
-      <S.Column>
+      <S.Column aria-label="contact">
         <Heading color="black" lineBottom lineColor="secondary" size="small">
           Contact
         </Heading>
         <a href="mailto:noreply@danielacb.com">noreply@danielacb.com</a>
       </S.Column>
 
-      <S.Column>
+      <S.Column aria-labelledby="social-media">
         <Heading color="black" lineBottom lineColor="secondary" size="small">
           Follow us
         </Heading>
-        <nav aria-labelledby="social media">
+        <nav id="social-media">
           <a
             href="https://www.instagram.com/won-games"
             target="_blank"
@@ -53,11 +52,11 @@ const Footer = () => (
         </nav>
       </S.Column>
 
-      <S.Column>
+      <S.Column aria-labelledby="footer-resources">
         <Heading color="black" lineBottom lineColor="secondary" size="small">
           Links
         </Heading>
-        <nav aria-labelledby="footer resources">
+        <nav id="footerresources">
           <Link href="/">
             <a>Home</a>
           </Link>
@@ -70,7 +69,7 @@ const Footer = () => (
         </nav>
       </S.Column>
 
-      <S.Column>
+      <S.Column aria-label="location">
         <Heading color="black" lineColor="secondary" lineBottom size="small">
           Location
         </Heading>

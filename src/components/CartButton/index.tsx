@@ -2,8 +2,9 @@ import {
   AddShoppingCart,
   RemoveShoppingCart
 } from '@styled-icons/material-outlined'
-import Button, { ButtonProps } from 'components/Button'
 import { useCart } from 'hooks/use-cart'
+
+import Button, { ButtonProps } from 'components/Button'
 
 type CartButtonProps = {
   id: string
@@ -20,13 +21,8 @@ const CartButton = ({
 
   return (
     <Button
-      icon={
-        isInCart(id) ? (
-          <RemoveShoppingCart aria-label={buttonText} />
-        ) : (
-          <AddShoppingCart aria-label={buttonText} />
-        )
-      }
+      icon={isInCart(id) ? <RemoveShoppingCart /> : <AddShoppingCart />}
+      aria-label={buttonText}
       size={size}
       onClick={() => (isInCart(id) ? removeFromCart(id) : addToCart(id))}
     >

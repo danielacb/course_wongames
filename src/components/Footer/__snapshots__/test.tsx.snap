@@ -20,12 +20,6 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
   border-bottom: 0.4rem solid #3CD3C1;
 }
 
-.c1 {
-  color: #030517;
-  width: 11rem;
-  height: 3.3rem;
-}
-
 .c0 .c4 {
   text-transform: uppercase;
 }
@@ -44,7 +38,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .c3 a:hover {
@@ -58,6 +52,12 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
   margin-top: 4.0rem;
   margin-bottom: 3.2rem;
   text-align: center;
+}
+
+.c1 {
+  color: #030517;
+  width: 11rem;
+  height: 3.3rem;
 }
 
 @media (min-width:768px) {
@@ -159,6 +159,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
     class="c2"
   >
     <div
+      aria-label="contact"
       class="c3"
     >
       <h2
@@ -174,6 +175,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
       </a>
     </div>
     <div
+      aria-labelledby="social-media"
       class="c3"
     >
       <h2
@@ -183,7 +185,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
         Follow us
       </h2>
       <nav
-        aria-labelledby="social media"
+        id="social-media"
       >
         <a
           href="https://www.instagram.com/won-games"
@@ -216,6 +218,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
       </nav>
     </div>
     <div
+      aria-labelledby="footer-resources"
       class="c3"
     >
       <h2
@@ -225,7 +228,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
         Links
       </h2>
       <nav
-        aria-labelledby="footer resources"
+        id="footerresources"
       >
         <a
           href="/"
@@ -245,6 +248,7 @@ exports[`<Footer /> should render 4 columns topics 1`] = `
       </nav>
     </div>
     <div
+      aria-label="location"
       class="c3"
     >
       <h2

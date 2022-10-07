@@ -9,6 +9,7 @@ import gameInfoMock from 'components/GameInfo/mock'
 import highlightMock from 'components/Highlight/mock'
 
 const props: GameTemplateProps = {
+  slug: 'slug',
   cover: 'bg-image.jpg',
   gameInfo: gameInfoMock,
   gallery: galleryMock,

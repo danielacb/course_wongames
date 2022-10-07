@@ -1,5 +1,6 @@
 import Cart from '.'
 import 'match-media-mock'
+import { Session } from 'next-auth'
 import { render, screen } from 'utils/test-utils'
 
 import gamesMock from 'components/GameCardSlider/mock'
@@ -47,8 +48,20 @@ jest.mock('components/EmptyState', () => ({
 }))
 
 describe('<Cart />', () => {
+  let session: Session
+
+  beforeEach(() => {
+    session = {
+      jwt: 'token',
+      user: {
+        email: 'won@games.com'
+      },
+      expires: '12345'
+    }
+  })
+
   it('should render sections', () => {
-    render(<Cart {...props} />)
+    render(<Cart session={session} {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /my cart/i })

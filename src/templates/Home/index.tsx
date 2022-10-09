@@ -1,12 +1,12 @@
-import Base from 'templates/Base'
-import { Container } from 'components/Container'
-import BannerSlider from 'components/BannerSlider'
-import { HighlightProps } from 'components/Highlight'
-import { BannerProps } from 'components/Banner'
-import { GameCardProps } from 'components/GameCard'
-import Showcase from 'components/Showcase'
-
 import * as S from './styles'
+import Base from 'templates/Base'
+
+import { BannerProps } from 'components/Banner'
+import BannerSlider from 'components/BannerSlider'
+import { Container } from 'components/Container'
+import { GameCardProps } from 'components/GameCard'
+import { HighlightProps } from 'components/Highlight'
+import Showcase from 'components/Showcase'
 
 export type HomeTemplateProps = {
   banners: BannerProps[]

@@ -1,10 +1,11 @@
+import * as S from './styles'
+import { useCart } from 'hooks/use-cart'
+import Link from 'next/link'
+
 import Button from 'components/Button'
 import EmptyState from 'components/EmptyState'
 import GameItem from 'components/GameItem'
 import Loading from 'components/Loading'
-import { useCart } from 'hooks/use-cart'
-import Link from 'next/link'
-import * as S from './styles'
 
 export type CartListProps = {
   hasButton?: boolean
@@ -22,7 +23,7 @@ const CartList = ({ hasButton }: CartListProps) => {
   }
 
   return (
-    <S.Wrapper isEmpty={!items.length}>
+    <S.Wrapper isEmpty={!items.length} data-cy="cart-list">
       {items.length ? (
         <>
           <S.GameList>

@@ -1,8 +1,8 @@
+import * as S from './styles'
+import { Apple, Linux, Windows } from '@styled-icons/fa-brands'
+
 import Heading from 'components/Heading'
 import MediaMatch from 'components/MediaMatch'
-import { Apple, Windows, Linux } from '@styled-icons/fa-brands'
-
-import * as S from './styles'
 
 type Platform = 'windows' | 'linux' | 'mac'
 
@@ -32,7 +32,7 @@ const GameDetails = ({
   }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper data-cy="game-details">
       <MediaMatch greaterThan="small">
         <Heading lineLeft lineColor="secondary">
           Game Details

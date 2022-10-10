@@ -1,9 +1,10 @@
+import * as S from './styles'
+import formatPrice from 'utils/formatPrice'
+
 import CartButton from 'components/CartButton'
 import Heading from 'components/Heading'
 import Ribbon from 'components/Ribbon'
 import WishlistButton from 'components/WishlistButton'
-import formatPrice from 'utils/formatPrice'
-import * as S from './styles'
 
 export type GameInfoProps = {
   id: string
@@ -13,7 +14,7 @@ export type GameInfoProps = {
 }
 
 const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
-  <S.Wrapper>
+  <S.Wrapper data-cy="game-info">
     <Heading color="black" lineBottom>
       {title}
     </Heading>

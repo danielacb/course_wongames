@@ -1,6 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CartList /> should render the CartList 1`] = `
+.c0 {
+  background: #FAFAFA;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
+}
+
+.c9 {
+  background: #F2F2F2;
+  color: #030517;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  color: #F231A5;
+}
+
+.c1 {
+  max-height: 40rem;
+  overflow-y: auto;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c2 {
   padding: 2.4rem;
   border-bottom: 0.1rem solid #EAEAEA;
@@ -77,52 +125,11 @@ exports[`<CartList /> should render the CartList 1`] = `
   width: 100%;
 }
 
-.c0 {
-  background: #FAFAFA;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-self: start;
-  -ms-flex-item-align: start;
-  align-self: start;
-}
-
-.c9 {
-  background: #F2F2F2;
-  color: #030517;
-  font-weight: 600;
-  font-size: 1.4rem;
-  padding: 2rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 {
-  color: #F231A5;
-}
-
-.c1 {
-  max-height: 40rem;
-  overflow-y: auto;
-}
-
-.c1 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
+@media (min-width:768px) {
+  .c9 {
+    font-size: 1.6rem;
+    padding: 2.4rem;
+  }
 }
 
 @media (min-width:768px) {
@@ -149,15 +156,9 @@ exports[`<CartList /> should render the CartList 1`] = `
   }
 }
 
-@media (min-width:768px) {
-  .c9 {
-    font-size: 1.6rem;
-    padding: 2.4rem;
-  }
-}
-
 <div
   class="c0"
+  data-cy="cart-list"
 >
   <div
     class="c1"

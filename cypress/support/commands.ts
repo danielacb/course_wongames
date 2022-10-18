@@ -37,6 +37,7 @@
 // }
 //
 // Testing Library Commands
+import { createUser } from '../support/generate'
 import '@testing-library/cypress/add-commands'
 
 Cypress.Commands.add('getByDataCy', (selector, ...args) => {
@@ -98,4 +99,12 @@ Cypress.Commands.add('shouldBeLessThan', (value) => {
     .then(($el) => $el.replace('$', ''))
     .then(parseFloat)
     .should('be.lt', value)
+})
+
+Cypress.Commands.add('signUp', (user: User) => {
+  cy.findByPlaceholderText(/username/i).type(user.username)
+  cy.findByPlaceholderText(/email/i).type(user.email)
+  cy.findByPlaceholderText(/^password/i).type(user.password)
+  cy.findByPlaceholderText(/confirm password/i).type(user.password)
+  cy.findByRole('button', { name: /sign up now/i }).click()
 })

@@ -10,6 +10,12 @@ type FieldsAttributes = {
   name: string | number
 }
 
+type User = {
+  username: string
+  email: string
+  password: string
+}
+
 declare namespace Cypress {
   interface Chainable {
     /**
@@ -47,5 +53,11 @@ declare namespace Cypress {
      * @example cy.shouldBeGreaterThan(100)
      */
     shouldBeGreaterThan(value: number): Chainable<Element>
+
+    /**
+     * Custom command to sign a new user up
+     * @example cy.signUp(user)
+     */
+    signUp(user: User): Chainable<Element>
   }
 }

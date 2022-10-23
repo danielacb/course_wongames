@@ -1,8 +1,7 @@
+import FormRequestPassword from '.'
 import userEvent from '@testing-library/user-event'
 import 'server.mock'
 import { render, screen } from 'utils/test-utils'
-
-import FormRequestPassword from '.'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')

@@ -1,17 +1,17 @@
-import { useRouter } from 'next/router'
+import { FormEvent, useState } from 'react'
+
 import {
   CheckCircleOutline,
   Email,
   ErrorOutline
 } from '@styled-icons/material-outlined'
-import { FormEvent, useState } from 'react'
+import { useRouter } from 'next/router'
+import { FieldErrors, requestPasswordValidate } from 'utils/validations'
 
 import Button from 'components/Button'
 import { FormError, FormSuccess, FormWrapper } from 'components/Form'
-import TextField from 'components/TextField'
-
-import { FieldErrors, requestPasswordValidate } from 'utils/validations'
 import Heading from 'components/Heading'
+import TextField from 'components/TextField'
 
 const FormRequestPassword = () => {
   const { query } = useRouter()

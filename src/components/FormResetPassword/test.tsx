@@ -1,10 +1,8 @@
-import 'server.mock'
-import { signIn } from 'next-auth/client'
-
-import userEvent from '@testing-library/user-event'
-import { render, screen, waitFor } from 'utils/test-utils'
-
 import FormResetPassword from '.'
+import userEvent from '@testing-library/user-event'
+import { signIn } from 'next-auth/client'
+import 'server.mock'
+import { render, screen, waitFor } from 'utils/test-utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')

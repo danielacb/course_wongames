@@ -1,15 +1,15 @@
+import useWishlist from 'hooks/use-wishlist'
 import Base from 'templates/Base'
 
-import Heading from 'components/Heading'
-import Showcase from 'components/Showcase'
-import EmptyState from 'components/EmptyState'
 import { Container } from 'components/Container'
-import { Grid } from 'components/Grid'
 import { Divider } from 'components/Divider'
+import EmptyState from 'components/EmptyState'
 import GameCard, { GameCardProps } from 'components/GameCard'
+import { Grid } from 'components/Grid'
+import Heading from 'components/Heading'
 import { HighlightProps } from 'components/Highlight'
-import useWishlist from 'hooks/use-wishlist'
 import Loading from 'components/Loading'
+import Showcase from 'components/Showcase'
 
 export type WishlistProps = {
   recommendedTitle?: string
@@ -26,7 +26,7 @@ const Wishlist = ({
 
   return (
     <Base>
-      <Container>
+      <Container data-cy="wishlist">
         <Heading lineLeft lineColor="secondary">
           Wishlist
         </Heading>

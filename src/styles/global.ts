@@ -1,11 +1,12 @@
 import {
-  createGlobalStyle,
-  css,
   DefaultTheme,
-  GlobalStyleComponent
+  GlobalStyleComponent,
+  createGlobalStyle,
+  css
 } from 'styled-components'
 
 type GlobalStylesProps = {
+  theme: DefaultTheme
   removeBg?: boolean
 }
 

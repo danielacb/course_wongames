@@ -32,7 +32,7 @@ const UserDropdown = ({ username }: UserDropdownProps) => {
         </>
       }
     >
-      <S.Nav>
+      <S.Nav data-cy="nav-user-dropdown">
         <Link href="/profile/me" passHref>
           <S.Link>
             <AccountCircle />
